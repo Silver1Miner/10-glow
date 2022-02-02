@@ -6,3 +6,54 @@ anchor_bottom = 1.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Background" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="VBoxContainer" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="Button" parent="Options"]
+margin_right = 84.0
+margin_bottom = 20.0
+text = "New Game"
+
+[node name="LoadGame" type="Button" parent="Options"]
+margin_top = 24.0
+margin_right = 84.0
+margin_bottom = 44.0
+text = "Load Game"
+
+[node name="Settings" type="Button" parent="Options"]
+margin_top = 48.0
+margin_right = 84.0
+margin_bottom = 68.0
+text = "Settings"
+
+[node name="Credits" type="Button" parent="Options"]
+margin_top = 72.0
+margin_right = 84.0
+margin_bottom = 92.0
+text = "Credits"
+
+[node name="Quit" type="Button" parent="Options"]
+margin_top = 96.0
+margin_right = 84.0
+margin_bottom = 116.0
+text = "Quit"
+
+[node name="Credits" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.470588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
