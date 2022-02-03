@@ -1,21 +1,21 @@
-extends KinematicBody2D
+extends Node2D
 
 export var grid: Resource = preload("res://src/world/Grid.tres")
-export var cell := Vector2.ZERO setget set_cell
 export var ui_cooldown := 0.1
 onready var _timer: Timer = $Timer
+onready var _ray: RayCast2D = $RayCast2D
+
+var cell := Vector2.ZERO
+var tile_size = 32
+var inputs = {
+	"ui_right": Vector2.RIGHT, "ui_left": Vector2.LEFT,
+	"ui_up": Vector2.UP, "ui_down": Vector2.DOWN
+}
 
 func _ready() -> void:
 	_timer.wait_time = ui_cooldown
-	set_cell(grid.get_cell_coordinates(position))
-	position = grid.get_map_position(cell)
-
-func set_cell(input: Vector2) -> void:
-	var new_cell: Vector2 = grid.clamp_to_board(input)
-	if new_cell.is_equal_approx(cell):
-		return
-	cell = new_cell
-	position = grid.get_map_position(cell)
+	position = position.snapped(Vector2.ONE * tile_size)
+	cell = grid.get_cell_coordinates(position)
 
 func _unhandled_input(event) -> void:
 	var should_move = event.is_pressed()
@@ -23,11 +23,13 @@ func _unhandled_input(event) -> void:
 		should_move = should_move and _timer.is_stopped()
 	if not should_move:
 		return
-	if event.is_action("ui_right"):
-		self.cell += Vector2.RIGHT
-	elif event.is_action("ui_left"):
-		self.cell += Vector2.LEFT
-	if event.is_action("ui_up"):
-		self.cell += Vector2.UP
-	elif event.is_action("ui_down"):
-		self.cell += Vector2.DOWN
+	for dir in inputs.keys():
+		if event.is_action_pressed(dir):
+			move(dir)
+
+func move(dir) -> void:
+	_ray.cast_to = inputs[dir] * tile_size
+	_ray.force_raycast_update()
+	if !_ray.is_colliding():
+		position += inputs[dir] * tile_size
+	cell = grid.get_cell_coordinates(position)
