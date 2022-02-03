@@ -26,6 +26,8 @@ func _unhandled_input(event) -> void:
 	for dir in inputs.keys():
 		if event.is_action_pressed(dir):
 			move(dir)
+	if event.is_action_pressed("ui_select"):
+		interact()
 
 func move(dir) -> void:
 	_ray.cast_to = inputs[dir] * tile_size
@@ -33,3 +35,10 @@ func move(dir) -> void:
 	if !_ray.is_colliding():
 		position += inputs[dir] * tile_size
 	cell = grid.get_cell_coordinates(position)
+
+func interact() -> void:
+	_ray.force_raycast_update()
+	if _ray.is_colliding() and _ray.get_collider().has_method("interact"):
+		_ray.get_collider().interact()
+	else:
+		print("nothing to interact with")
