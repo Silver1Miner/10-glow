@@ -24,32 +24,33 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Button" parent="Options"]
-margin_right = 84.0
+margin_right = 104.0
 margin_bottom = 20.0
 text = "New Game"
 
-[node name="LoadGame" type="Button" parent="Options"]
+[node name="Achievements" type="Button" parent="Options"]
 margin_top = 24.0
-margin_right = 84.0
+margin_right = 104.0
 margin_bottom = 44.0
-text = "Load Game"
+text = "Achievements"
 
 [node name="Settings" type="Button" parent="Options"]
 margin_top = 48.0
-margin_right = 84.0
+margin_right = 104.0
 margin_bottom = 68.0
 text = "Settings"
 
 [node name="Credits" type="Button" parent="Options"]
 margin_top = 72.0
-margin_right = 84.0
+margin_right = 104.0
 margin_bottom = 92.0
 text = "Credits"
 
 [node name="Quit" type="Button" parent="Options"]
 margin_top = 96.0
-margin_right = 84.0
+margin_right = 104.0
 margin_bottom = 116.0
 text = "Quit"
 
 [node name="Credits" parent="." instance=ExtResource( 1 )]
+visible = false

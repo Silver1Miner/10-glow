@@ -34,6 +34,8 @@ func move(dir) -> void:
 	_ray.force_raycast_update()
 	if !_ray.is_colliding():
 		position += inputs[dir] * tile_size
+	elif _ray.get_collider().has_method("interact"):
+		_ray.get_collider().interact()
 	cell = grid.get_cell_coordinates(position)
 
 func interact() -> void:
