@@ -8,6 +8,22 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "StaticBody2D",
+"class": "Furniture",
+"language": "GDScript",
+"path": "res://src/world/room/Furniture.gd"
+}, {
+"base": "Area2D",
+"class": "Wallpaper",
+"language": "GDScript",
+"path": "res://src/world/room/Wallpaper.gd"
+} ]
+_global_script_class_icons={
+"Furniture": "",
+"Wallpaper": ""
+}
+
 [application]
 
 config/name="Glow Worm"
@@ -17,6 +33,10 @@ boot_splash/bg_color=Color( 0.545098, 0.545098, 0.545098, 1 )
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"
 config/windows_native_icon="res://icon.ico"
+
+[autoload]
+
+PlayerData="*res://src/playerdata/PlayerData.tscn"
 
 [display]
 

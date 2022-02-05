@@ -1,20 +1,26 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/world/ui/UI.gd" type="Script" id=1]
+[ext_resource path="res://src/world/ui/Textbox.tscn" type="PackedScene" id=2]
 
 [node name="GUI" type="CanvasLayer"]
 
 [node name="UI" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+anchor_right = 1.0
+anchor_bottom = 1.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Textbox" parent="UI" instance=ExtResource( 2 )]
+
 [node name="ItemList" type="ItemList" parent="UI"]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 496.0
+margin_top = 128.0
+margin_right = 624.0
+margin_bottom = 304.0
+fixed_icon_size = Vector2( 16, 16 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

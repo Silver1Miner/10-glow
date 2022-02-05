@@ -8,10 +8,14 @@ func _ready() -> void:
 
 func populate_item_list(values: Array) -> void:
 	item_list.clear()
+	item_list.add_item("Cancel")
 	for item in values:
 		item_list.add_item(item["name"], item["icon"])
 	print(values)
 
 func _on_ItemList_item_selected(index: int) -> void:
 	print(index)
-	emit_signal("item_selected", index)
+	if index == 0:
+		visible = false
+	else:
+		emit_signal("item_selected", index)

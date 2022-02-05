@@ -5,6 +5,8 @@ export var ui_cooldown := 0.1
 onready var _timer: Timer = $Timer
 onready var _ray: RayCast2D = $RayCast2D
 
+onready var interface = $"../GUI/UI"
+
 var cell := Vector2.ZERO
 var tile_size = 32
 var inputs = {
@@ -34,13 +36,23 @@ func move(dir) -> void:
 	_ray.force_raycast_update()
 	if !_ray.is_colliding():
 		position += inputs[dir] * tile_size
-	elif _ray.get_collider().has_method("interact"):
-		_ray.get_collider().interact()
+	else:
+		interact()
 	cell = grid.get_cell_coordinates(position)
 
 func interact() -> void:
 	_ray.force_raycast_update()
 	if _ray.is_colliding() and _ray.get_collider().has_method("interact"):
-		_ray.get_collider().interact()
+		var identity = _ray.get_collider().get_class()
+		var type = _ray.get_collider().interact()
+		if identity == "Exit":
+			return
+		elif identity == "Furniture":
+			if type == 0:
+				interface.populate_item_list(PlayerData.chairs)
+				interface.visible = true
+		elif identity == "Wallpaper":
+			interface.populate_item_list(PlayerData.wallpapers)
+			interface.visible = true
 	else:
 		print("nothing to interact with")
