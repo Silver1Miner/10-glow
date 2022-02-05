@@ -1,11 +1,8 @@
 extends StaticBody2D
 
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
-func get_class() -> String:
-	return "Exit"
-
-func interact() -> int:
+func exit() -> int:
 	print("interacting with exit")
 	return 0

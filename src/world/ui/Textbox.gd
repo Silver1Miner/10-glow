@@ -16,16 +16,14 @@ var test_dialogue = {
 	"1": {"name":"red", "profile":"red",
 	"text":"the quick brown fox jumps over the lazy dog"},
 }
-var profiles = {
-	"": "",
-}
+var profiles = {}
 
 func _ready() -> void:
 	timer.wait_time = 0.05
 	timer.autostart = true
-	#initialize(test_dialogue)
+	#play_dialogue(test_dialogue)
 
-func initialize(scene) -> void:
+func play_dialogue(scene) -> void:
 	visible = true
 	timer.start()
 	dialogue = scene.duplicate(true)

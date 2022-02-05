@@ -1,12 +1,15 @@
 extends Node2D
 
-export var grid: Resource = preload("res://src/world/Grid.tres")
+export var grid: Resource = preload("res://src/data/Grid.tres")
+export var data: Resource = preload("res://src/data/DataResource.tres")
 export var ui_cooldown := 0.1
 onready var _timer: Timer = $Timer
 onready var _ray: RayCast2D = $RayCast2D
-
 onready var interface = $"../GUI/UI"
+onready var itemlist = $"../GUI/UI/ItemList"
+onready var textbox = $"../GUI/UI/Textbox"
 
+var current_target = null
 var cell := Vector2.ZERO
 var tile_size = 32
 var inputs = {
@@ -18,6 +21,8 @@ func _ready() -> void:
 	_timer.wait_time = ui_cooldown
 	position = position.snapped(Vector2.ONE * tile_size)
 	cell = grid.get_cell_coordinates(position)
+	if interface.connect("item_activated", self, "_on_item_activated") != OK:
+		push_error("UI selection connect fail")
 
 func _unhandled_input(event) -> void:
 	var should_move = event.is_pressed()
@@ -42,17 +47,30 @@ func move(dir) -> void:
 
 func interact() -> void:
 	_ray.force_raycast_update()
-	if _ray.is_colliding() and _ray.get_collider().has_method("interact"):
-		var identity = _ray.get_collider().get_class()
-		var type = _ray.get_collider().interact()
-		if identity == "Exit":
-			return
-		elif identity == "Furniture":
-			if type == 0:
-				interface.populate_item_list(PlayerData.chairs)
-				interface.visible = true
-		elif identity == "Wallpaper":
-			interface.populate_item_list(PlayerData.wallpapers)
-			interface.visible = true
+	if _ray.is_colliding() and _ray.get_collider().has_method("exit"):
+		interface.populate_item_list(data.choice)
+		itemlist.visible = true
+		interface.visible = true
+		itemlist.select(0)
+		itemlist.grab_focus()
+		textbox.play_dialogue({"0": {"name":"", "profile":"",
+		"text":"Exit Mind Space?"}})
+	elif _ray.is_colliding() and _ray.get_collider().has_method("interact"):
+		current_target = _ray.get_collider()
+		var type = current_target.get_decoration_type()
+		interface.populate_item_list(data.decorations[type])
+		itemlist.visible = true
+		interface.visible = true
+		itemlist.select(0)
+		itemlist.grab_focus()
+		textbox.play_dialogue({"0": {"name":"", "profile":"",
+		"text":"Change decoration?"}})
 	else:
+		current_target = null
 		print("nothing to interact with")
+
+func _on_item_activated(index) -> void:
+	print(index)
+	if current_target and current_target.has_method("change_decoration"):
+		current_target.change_decoration(index-1)
+		interface.visible = false

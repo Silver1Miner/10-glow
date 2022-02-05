@@ -9,19 +9,13 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "StaticBody2D",
-"class": "Furniture",
-"language": "GDScript",
-"path": "res://src/world/room/Furniture.gd"
-}, {
 "base": "Area2D",
-"class": "Wallpaper",
+"class": "Decoration",
 "language": "GDScript",
-"path": "res://src/world/room/Wallpaper.gd"
+"path": "res://src/world/room/Decoration.gd"
 } ]
 _global_script_class_icons={
-"Furniture": "",
-"Wallpaper": ""
+"Decoration": ""
 }
 
 [application]
@@ -36,7 +30,7 @@ config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
-PlayerData="*res://src/playerdata/PlayerData.tscn"
+PlayerData="*res://src/data/PlayerData.tscn"
 
 [display]
 

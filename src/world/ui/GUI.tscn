@@ -25,4 +25,4 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[connection signal="item_selected" from="UI/ItemList" to="UI" method="_on_ItemList_item_selected"]
+[connection signal="item_activated" from="UI/ItemList" to="UI" method="_on_ItemList_item_activated"]
