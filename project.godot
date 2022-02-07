@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Area2D",
 "class": "Decoration",
 "language": "GDScript",
-"path": "res://src/world/room/Decoration.gd"
+"path": "res://src/mind/room/Decoration.gd"
 } ]
 _global_script_class_icons={
 "Decoration": ""

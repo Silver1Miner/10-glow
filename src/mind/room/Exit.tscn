@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://assets/room/furniture/crate_03.png" type="Texture" id=1]
-[ext_resource path="res://src/world/room/Exit.gd" type="Script" id=2]
+[ext_resource path="res://src/mind/room/Exit.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+extents = Vector2( 18, 18 )
 
 [node name="Exit" type="StaticBody2D"]
 script = ExtResource( 2 )

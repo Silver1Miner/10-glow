@@ -48,13 +48,15 @@ func move(dir) -> void:
 func interact() -> void:
 	_ray.force_raycast_update()
 	if _ray.is_colliding() and _ray.get_collider().has_method("exit"):
+		current_target = _ray.get_collider()
+		var query = _ray.get_collider().get_query()
 		interface.populate_item_list(data.choice)
 		itemlist.visible = true
 		interface.visible = true
 		itemlist.select(0)
 		itemlist.grab_focus()
 		textbox.play_dialogue({"0": {"name":"", "profile":"",
-		"text":"Exit Mind Space?"}})
+		"text":query}})
 	elif _ray.is_colliding() and _ray.get_collider().has_method("interact"):
 		current_target = _ray.get_collider()
 		var type = current_target.get_decoration_type()
@@ -70,7 +72,10 @@ func interact() -> void:
 		print("nothing to interact with")
 
 func _on_item_activated(index) -> void:
-	print(index)
 	if current_target and current_target.has_method("change_decoration"):
 		current_target.change_decoration(index-1)
+		interface.visible = false
+	elif index == 1 and current_target and current_target.has_method("exit"):
+		print(index)
+		current_target.exit()
 		interface.visible = false
