@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/world/physicalplayer/PhysicalPlayer.tscn" type="PackedScene" id=1]
+[ext_resource path="res://src/ui/GUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/world/interactables/PhysicalExit.tscn" type="PackedScene" id=3]
+
+[node name="World" type="Node2D"]
+
+[node name="PhysicalExit" parent="." instance=ExtResource( 3 )]
+
+[node name="PhysicalPlayer" parent="." instance=ExtResource( 1 )]
+position = Vector2( 120, 248 )
+
+[node name="GUI" parent="." instance=ExtResource( 2 )]
+
+[node name="ItemList" parent="GUI/UI" index="1"]
+visible = false
+
+[editable path="GUI"]

@@ -1,5 +1,7 @@
 extends StaticBody2D
 
+signal exit_used()
+
 export var next_scene: String
 export var query: String = "Exit mind space?"
 
@@ -10,5 +12,6 @@ func get_query() -> String:
 	return query
 
 func exit() -> void:
+	emit_signal("exit_used")
 	if get_tree().change_scene(next_scene) != OK:
 		push_error("failed to change scene")
