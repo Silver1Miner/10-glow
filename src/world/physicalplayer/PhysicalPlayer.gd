@@ -9,8 +9,9 @@ onready var itemlist = $"../GUI/UI/ItemList"
 onready var textbox = $"../GUI/UI/Textbox"
 
 func _ready() -> void:
-	if interface.connect("item_activated", self, "_on_item_activated") != OK:
+	if interface and interface.connect("item_activated", self, "_on_item_activated") != OK:
 		push_error("UI selection connect fail")
+	$"../GUI/MindRating".text = "Corruption:" + str(PlayerData.corruption)
 
 func get_input() -> void:
 	direction = Vector2.ZERO
@@ -49,6 +50,10 @@ func _on_Hitbox_area_exited(_area: Area2D) -> void:
 	current_target = null
 
 func _on_item_activated(index) -> void:
-	if index == 1 and current_target and current_target.has_method("physical_exit"):
-		current_target.physical_exit()
-		interface.visible = false
+	if index == 1 and current_target:
+		if current_target.has_method("physical_exit"):
+			current_target.physical_exit()
+			interface.visible = false
+		elif current_target.has_method("physical_interact"):
+			current_target.physical_interact()
+			interface.visible = false

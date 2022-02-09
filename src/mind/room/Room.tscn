@@ -34,7 +34,7 @@ decoration_id = 1
 
 [node name="GUI" parent="." instance=ExtResource( 6 )]
 
-[node name="UI" parent="GUI" index="0"]
+[node name="UI" parent="GUI" index="1"]
 visible = false
 
 [connection signal="exit_used" from="Exit" to="." method="_on_Exit_exit_used"]

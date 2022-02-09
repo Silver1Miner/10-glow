@@ -21,8 +21,9 @@ _global_script_class_icons={
 [application]
 
 config/name="Glow Worm"
-boot_splash/image="res://icon.png"
-boot_splash/fullsize=false
+config/description="Infiltrate the mysterious cult"
+run/main_scene="res://src/menu/MainMenu.tscn"
+boot_splash/image="res://assets/menu/worm-menu.png"
 boot_splash/bg_color=Color( 0.545098, 0.545098, 0.545098, 1 )
 config/icon="res://icon.png"
 config/macos_native_icon="res://icon.png"
@@ -30,6 +31,7 @@ config/windows_native_icon="res://icon.ico"
 
 [autoload]
 
+AudioManager="*res://src/audio/AudioManager.tscn"
 PlayerData="*res://src/data/PlayerData.tscn"
 
 [display]

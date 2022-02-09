@@ -5,6 +5,10 @@ onready var decorations = $Decorations
 func _ready() -> void:
 	if len(PlayerData.decorations) > 0:
 		load_decorations()
+	for d in decorations.get_children():
+		if d.connect("decoration_updated", self, "update_mind_rating") != OK:
+			push_error("decoration connect fail")
+	update_mind_rating()
 
 func _on_Exit_exit_used() -> void:
 	save_decorations()
@@ -20,3 +24,10 @@ func save_decorations() -> void:
 		serialized[d.decoration_id] = d.serialize_state()
 	PlayerData.decorations = serialized.duplicate(true)
 	print(PlayerData.decorations)
+
+func update_mind_rating() -> void:
+	var sum = 0
+	for d in decorations.get_children():
+		sum += d.get_decoration_rating()
+	PlayerData.corruption = sum
+	$GUI/MindRating.text = "Corruption:" + str(PlayerData.corruption)
