@@ -16,12 +16,13 @@ var inputs = {
 	"ui_right": Vector2.RIGHT, "ui_left": Vector2.LEFT,
 	"ui_up": Vector2.UP, "ui_down": Vector2.DOWN
 }
+var player_has = []
 
 func _ready() -> void:
 	_timer.wait_time = ui_cooldown
 	position = position.snapped(Vector2.ONE * tile_size)
 	cell = grid.get_cell_coordinates(position)
-	if interface.connect("item_activated", self, "_on_item_activated") != OK:
+	if interface and interface.connect("item_activated", self, "_on_item_activated") != OK:
 		push_error("UI selection connect fail")
 
 func _unhandled_input(event) -> void:
@@ -31,7 +32,7 @@ func _unhandled_input(event) -> void:
 	if not should_move:
 		return
 	for dir in inputs.keys():
-		if event.is_action_pressed(dir):
+		if event.is_action(dir):
 			move(dir)
 	if event.is_action_pressed("ui_select"):
 		interact()
@@ -44,6 +45,7 @@ func move(dir) -> void:
 	else:
 		interact()
 	cell = grid.get_cell_coordinates(position)
+	_timer.start()
 
 func interact() -> void:
 	_ray.force_raycast_update()
@@ -60,7 +62,11 @@ func interact() -> void:
 	elif _ray.is_colliding() and _ray.get_collider().has_method("interact"):
 		current_target = _ray.get_collider()
 		var type = current_target.get_decoration_type()
-		interface.populate_item_list(data.decorations[type])
+		player_has.clear()
+		for dec in data.decorations[type]:
+			if dec["name"] in PlayerData.inventory:
+				player_has.append(dec)
+		interface.populate_item_list(player_has)
 		itemlist.visible = true
 		interface.visible = true
 		itemlist.select(0)
@@ -73,7 +79,7 @@ func interact() -> void:
 
 func _on_item_activated(index) -> void:
 	if current_target and current_target.has_method("change_decoration"):
-		current_target.change_decoration(index-1)
+		current_target.change_decoration(player_has[index-1]["id"])
 		interface.visible = false
 	elif index == 1 and current_target and current_target.has_method("exit"):
 		print(index)

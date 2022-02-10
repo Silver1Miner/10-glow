@@ -4,3 +4,4 @@ var corruption := 0
 var level := 0
 
 var decorations := {}
+var inventory := ["wall2"]

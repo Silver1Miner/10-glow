@@ -37,6 +37,9 @@ decoration_id = 1
 [node name="UI" parent="GUI" index="1"]
 visible = false
 
+[node name="Message" parent="GUI" index="2"]
+visible = false
+
 [connection signal="exit_used" from="Exit" to="." method="_on_Exit_exit_used"]
 
 [editable path="GUI"]

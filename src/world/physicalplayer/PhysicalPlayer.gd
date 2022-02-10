@@ -7,6 +7,7 @@ var current_target = null
 onready var interface = $"../GUI/UI"
 onready var itemlist = $"../GUI/UI/ItemList"
 onready var textbox = $"../GUI/UI/Textbox"
+onready var message = $"../GUI/Message"
 
 func _ready() -> void:
 	if interface and interface.connect("item_activated", self, "_on_item_activated") != OK:
@@ -17,20 +18,26 @@ func get_input() -> void:
 	direction = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
+		message.visible = false
+		interface.visible = false
 	elif Input.is_action_pressed("ui_left"):
 		direction.x -= 1
+		message.visible = false
+		interface.visible = false
 
 func _process(delta: float) -> void:
 	get_input()
 	position += direction * speed * delta
 	if position.x < 32:
 		position.x = 32
-	elif position.x > 640 - 32:
-		position.x = 640 - 32
+	elif position.x > 1280 - 32:
+		position.x = 1280 - 32
 
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down") or event.is_action_pressed("ui_select"):
+		message.visible = false
 		physical_interact()
+		get_tree().set_input_as_handled()
 
 func physical_interact() -> void:
 	if current_target and current_target.has_method("get_query"):
