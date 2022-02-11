@@ -82,9 +82,6 @@ margin_bottom = 195.794
 rect_min_size = Vector2( 140, 30 )
 text = "Quit"
 
-[node name="Credits" parent="." instance=ExtResource( 1 )]
-visible = false
-
 [node name="version" type="Label" parent="."]
 anchor_left = 1.0
 anchor_right = 1.0
@@ -131,5 +128,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Credits" parent="." instance=ExtResource( 1 )]
+visible = false
+
 [connection signal="pressed" from="Options/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Options/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Options/Quit" to="." method="_on_Quit_pressed"]

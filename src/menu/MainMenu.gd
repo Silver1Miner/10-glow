@@ -1,12 +1,18 @@
 extends Control
 
 func _ready() -> void:
-	pass # Replace with function body.
+	if OS.get_name() == "HTML5":
+		$Options/quit.visible = false
+	AudioManager.play_music("res://assets/audio/its-glowtime.ogg", 0)
+	$Options/NewGame.grab_focus()
 
 func _on_NewGame_pressed() -> void:
-	if get_tree().change_scene("res://src/world/World.tscn") != OK:
+	PlayerData.new_game = true
+	if get_tree().change_scene_to(PlayerData.text_scroll) != OK:
 		push_error("fail to change scene")
-
 
 func _on_Quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_Credits_pressed() -> void:
+	$Credits.visible = true

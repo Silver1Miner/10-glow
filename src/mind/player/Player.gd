@@ -1,7 +1,7 @@
 extends Node2D
 
 export var grid: Resource = preload("res://src/data/Grid.tres")
-export var data: Resource = preload("res://src/data/DataResource.tres")
+export var data: Resource = load("res://src/data/DataResource.tres")
 export var ui_cooldown := 0.1
 onready var _timer: Timer = $Timer
 onready var _ray: RayCast2D = $RayCast2D
@@ -56,9 +56,9 @@ func interact() -> void:
 		itemlist.visible = true
 		interface.visible = true
 		itemlist.select(0)
-		itemlist.grab_focus()
 		textbox.play_dialogue({"0": {"name":"", "profile":"",
 		"text":query}})
+		itemlist.grab_focus()
 	elif _ray.is_colliding() and _ray.get_collider().has_method("interact"):
 		current_target = _ray.get_collider()
 		var type = current_target.get_decoration_type()
@@ -70,9 +70,9 @@ func interact() -> void:
 		itemlist.visible = true
 		interface.visible = true
 		itemlist.select(0)
-		itemlist.grab_focus()
 		textbox.play_dialogue({"0": {"name":"", "profile":"",
 		"text":"Change decoration?"}})
+		itemlist.grab_focus()
 	else:
 		current_target = null
 		print("nothing to interact with")

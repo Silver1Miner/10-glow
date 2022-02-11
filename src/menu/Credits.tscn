@@ -1,9 +1,14 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/ui/UI.tres" type="Theme" id=1]
+[ext_resource path="res://src/menu/Credits.gd" type="Script" id=2]
 
 [node name="Credits" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.470588 )
+theme = ExtResource( 1 )
+color = Color( 0, 0, 0, 0.862745 )
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -21,14 +26,18 @@ text = "Close"
 
 [node name="Credits" type="RichTextLabel" parent="."]
 margin_left = 23.0
-margin_top = 28.0
-margin_right = 617.0
-margin_bottom = 325.0
-text = "CREDITS
+margin_top = 64.0
+margin_right = 624.0
+margin_bottom = 288.0
+text = "FULL CREDITS
 
-GLOW WORM by Jack Anderson
+GLOW WORM
+by Jack Anderson
 
-ASSETS
+SOUNDTRACK
+\"It's Glowtime!\" by Vav
+
+ADDITIONAL ASSETS
 
 Title: Seasonal Platformer Tiles
 Author:     GrafxKid
@@ -37,3 +46,18 @@ License(s):  CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ToEndCredits" type="Button" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -37.5
+margin_top = 20.0
+margin_right = 37.5
+margin_bottom = 50.0
+text = "End Credits"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="ToEndCredits" to="." method="_on_ToEndCredits_pressed"]

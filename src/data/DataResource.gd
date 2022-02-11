@@ -32,3 +32,51 @@ var readings := [
 """We can change the world
 """,
 ]
+
+var intro_text = [
+	[
+		"Subject: [REDACTED].",
+		"Occupation: Field Agent."
+	],[
+		".",
+		".",
+	],[
+		".",
+		".",
+		".",
+	],[
+		"CURRENT MISSION OBJECTIVES",
+		"Infiltrate Cult.",
+		"Collect 10 Pieces of Evidence.",
+	],[
+		"Escape Alive.",
+	]
+]
+
+var credits = [
+	[
+		"Glow Worm",
+		"by Jack Anderson"
+	],[
+		"SOUNDTRACK",
+		"'It's Glowtime!' by Vav",
+	],[
+		"ART",
+		"Yanagi"
+	],[
+		"Additional CC0 Assets from",
+		"opengameart.org",
+		"freesound.org",
+		"kenney.nl",
+		"unsplash.com",
+		"fonts.google.com"
+	],[
+		"TOOLS",
+		"Godot",
+		"Krita",
+	],[
+		"This is a work of fiction.",
+		"Any resemblance to actual events or persons,",
+		"living or dead, is entirely coincidental."
+	],
+]

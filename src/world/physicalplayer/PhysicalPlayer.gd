@@ -1,6 +1,6 @@
 extends Node2D
 
-export var data: Resource = preload("res://src/data/DataResource.tres")
+export var data: Resource = load("res://src/data/DataResource.tres")
 var speed = 200
 var direction = Vector2.ZERO
 var current_target = null
