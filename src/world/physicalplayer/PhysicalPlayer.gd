@@ -34,21 +34,26 @@ func _process(delta: float) -> void:
 		position.x = 1280 - 32
 
 func _unhandled_input(event) -> void:
-	if event.is_action_pressed("ui_up") or event.is_action_pressed("ui_down") or event.is_action_pressed("ui_select"):
+	if not interface.visible and event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept"):
 		message.visible = false
 		physical_interact()
 		get_tree().set_input_as_handled()
 
 func physical_interact() -> void:
-	if current_target and current_target.has_method("get_query"):
-		var query = current_target.get_query()
-		interface.populate_item_list(data.choice)
-		itemlist.visible = true
-		interface.visible = true
-		itemlist.select(0)
-		itemlist.grab_focus()
-		textbox.play_dialogue({"0": {"name":"", "profile":"",
-		"text":query}})
+	if not message.visible and current_target:
+		if current_target.has_method("get_query"):
+			var query = current_target.get_query()
+			interface.populate_item_list(data.choice)
+			itemlist.visible = true
+			interface.visible = true
+			itemlist.select(0)
+			itemlist.grab_focus()
+			textbox.play_dialogue({"0": {"name":"", "profile":"",
+			"text":query}})
+		elif not interface.visible and current_target.has_method("converse"):
+			itemlist.visible = false
+			interface.visible = true
+			current_target.converse()
 
 func _on_Hitbox_area_entered(area: Area2D) -> void:
 	current_target = area

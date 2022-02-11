@@ -33,6 +33,15 @@ var readings := [
 """,
 ]
 
+var conversations = [
+	{ # 0
+	"0": {"name":"red", "profile":"red",
+	"text":"Hello"},
+	"1": {"name":"red", "profile":"red",
+	"text":"I didn't see you get on"},
+	},
+]
+
 var intro_text = [
 	[
 		"Subject: [REDACTED].",

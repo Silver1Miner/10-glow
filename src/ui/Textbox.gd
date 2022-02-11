@@ -37,6 +37,12 @@ func play_dialogue(scene) -> void:
 	text.set_visible_characters(0)
 	set_process_input(true)
 
+var possible_progress = ["ui_left", "ui_right", "ui_up", "ui_down", "ui_select"]
+func _unhandled_input(event: InputEvent) -> void:
+	for p in possible_progress:
+		if event.is_action_pressed(p):
+			_on_Next_pressed()
+
 func end_text() -> void:
 	visible = false
 	emit_signal("text_finished")

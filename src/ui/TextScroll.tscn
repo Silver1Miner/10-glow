@@ -44,29 +44,31 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Skip" type="Button" parent="."]
-anchor_left = 1.0
-anchor_right = 1.0
-margin_left = -60.0
-margin_top = 25.0
-margin_right = -20.0
-margin_bottom = 45.0
-rect_min_size = Vector2( 0, 20 )
-text = "Skip"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Label" type="Label" parent="."]
 self_modulate = Color( 1, 1, 1, 0.627451 )
 anchor_left = 1.0
 anchor_right = 1.0
 margin_left = -214.0
-margin_bottom = 20.0
+margin_bottom = 51.0
 custom_fonts/font = SubResource( 1 )
-text = "Hold Down to increase speed "
+text = "Hold Down to increase speed 
+
+Press C to"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skip" type="Button" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -65.0
+margin_top = 25.0
+margin_right = -25.0
+margin_bottom = 55.0
+rect_min_size = Vector2( 0, 20 )
+text = "Skip"
 __meta__ = {
 "_edit_use_anchors_": false
 }

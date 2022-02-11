@@ -2,7 +2,7 @@ extends Node2D
 
 export var grid: Resource = preload("res://src/data/Grid.tres")
 export var data: Resource = load("res://src/data/DataResource.tres")
-export var ui_cooldown := 0.1
+export var ui_cooldown := 0.05
 onready var _timer: Timer = $Timer
 onready var _ray: RayCast2D = $RayCast2D
 onready var interface = $"../GUI/UI"
@@ -34,7 +34,7 @@ func _unhandled_input(event) -> void:
 	for dir in inputs.keys():
 		if event.is_action(dir):
 			move(dir)
-	if event.is_action_pressed("ui_select"):
+	if event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept"):
 		interact()
 
 func move(dir) -> void:
