@@ -43,7 +43,10 @@ func physical_interact() -> void:
 	if not message.visible and current_target:
 		if current_target.has_method("get_query"):
 			var query = current_target.get_query()
-			interface.populate_item_list(data.choice)
+			if current_target.has_method("physical_exit"):
+				interface.populate_item_list(data.choice)
+			elif current_target.has_method("use_elevator"):
+				interface.populate_item_list(PlayerData.unlocked_floors)
 			itemlist.visible = true
 			interface.visible = true
 			itemlist.select(0)
@@ -62,10 +65,13 @@ func _on_Hitbox_area_exited(_area: Area2D) -> void:
 	current_target = null
 
 func _on_item_activated(index) -> void:
-	if index == 1 and current_target:
+	if index >= 1 and current_target:
 		if current_target.has_method("physical_exit"):
 			current_target.physical_exit()
 			interface.visible = false
 		elif current_target.has_method("physical_interact"):
 			current_target.physical_interact()
+			interface.visible = false
+		elif current_target.has_method("use_elevator"):
+			current_target.use_elevator(index)
 			interface.visible = false

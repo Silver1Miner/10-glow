@@ -8,6 +8,10 @@ func _ready() -> void:
 			inter.connect("read_interactable", self, "on_read_interactable")
 	for chars in $Characters.get_children():
 		chars.connect("play_conversation", self, "on_play_conversation")
+	if PlayerData.mind_side:
+		$PhysicalPlayer.position = $MindExit.position
+	else:
+		$PhysicalPlayer.position = $Elevator.position
 
 func on_read_interactable(read_id):
 	$GUI/Message/Text.text = data.readings[read_id]
