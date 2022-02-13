@@ -9,9 +9,9 @@ func _ready() -> void:
 	for chars in $Characters.get_children():
 		chars.connect("play_conversation", self, "on_play_conversation")
 	if PlayerData.mind_side:
-		$PhysicalPlayer.position = $MindExit.position
+		$PhysicalPlayer.position.x = $MindExit.position.x
 	else:
-		$PhysicalPlayer.position = $Elevator.position
+		$PhysicalPlayer.position.x = $Elevator.position.x
 
 func on_read_interactable(read_id):
 	$GUI/Message/Text.text = data.readings[read_id]

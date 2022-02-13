@@ -48,26 +48,26 @@ __meta__ = {
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Interactable" parent="Interactables" instance=ExtResource( 4 )]
-position = Vector2( 384, 248 )
+position = Vector2( 376, 216 )
 readable = true
 
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Character" parent="Characters" instance=ExtResource( 6 )]
-position = Vector2( 752, 248 )
+position = Vector2( 728, 216 )
 
 [node name="MindExit" parent="." instance=ExtResource( 3 )]
-position = Vector2( 32, 248 )
+position = Vector2( 32, 216 )
 
 [node name="Elevator" parent="." instance=ExtResource( 7 )]
-position = Vector2( 1256, 248 )
+position = Vector2( 1256, 216 )
 
 [node name="PhysicalExit2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1392, 248 )
+position = Vector2( 1392, 216 )
 query = "Go to next level?"
 
 [node name="PhysicalPlayer" parent="." instance=ExtResource( 1 )]
-position = Vector2( 136, 248 )
+position = Vector2( 136, 216 )
 
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 
@@ -81,6 +81,9 @@ visible = false
 visible = false
 
 [node name="Message" parent="GUI" index="2"]
+visible = false
+
+[node name="Transition" parent="GUI" index="3"]
 visible = false
 
 [editable path="GUI"]
