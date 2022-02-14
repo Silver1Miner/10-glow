@@ -17,13 +17,21 @@ func _ready() -> void:
 func get_input() -> void:
 	direction = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
+		$Sprite.flip_h = false
 		direction.x += 1
 		message.visible = false
 		interface.visible = false
+		if not $AnimationPlayer.is_playing():
+			$AnimationPlayer.play("walk")
 	elif Input.is_action_pressed("ui_left"):
+		$Sprite.flip_h = true
 		direction.x -= 1
 		message.visible = false
 		interface.visible = false
+		if not $AnimationPlayer.is_playing():
+			$AnimationPlayer.play("walk")
+	else:
+		$AnimationPlayer.play("RESET")
 
 func _process(delta: float) -> void:
 	get_input()
@@ -43,10 +51,10 @@ func physical_interact() -> void:
 	if not message.visible and current_target:
 		if current_target.has_method("get_query"):
 			var query = current_target.get_query()
-			if current_target.has_method("physical_exit"):
-				interface.populate_item_list(data.choice)
-			elif current_target.has_method("use_elevator"):
+			if current_target.has_method("use_elevator"):
 				interface.populate_item_list(PlayerData.unlocked_floors)
+			else:
+				interface.populate_item_list(data.choice)
 			itemlist.visible = true
 			interface.visible = true
 			itemlist.select(0)

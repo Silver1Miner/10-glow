@@ -40,6 +40,12 @@ var conversations = [
 	"1": {"name":"red", "profile":"red",
 	"text":"I didn't see you get on"},
 	},
+	{ # 1
+	"0": {"name":"red", "profile":"red",
+	"text":"Hello"},
+	"1": {"name":"red", "profile":"red",
+	"text":"I didn't see you get on"},
+	},
 ]
 
 var intro_text = [

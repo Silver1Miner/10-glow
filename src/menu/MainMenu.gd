@@ -3,7 +3,8 @@ extends Control
 func _ready() -> void:
 	if OS.get_name() == "HTML5":
 		$Options/quit.visible = false
-	AudioManager.play_music("res://assets/audio/its-glowtime.ogg", 0)
+	if not AudioManager.playing:
+		AudioManager.play_music("res://assets/audio/its-glowtime.ogg", 0)
 	$Options/NewGame.grab_focus()
 
 func _on_NewGame_pressed() -> void:
