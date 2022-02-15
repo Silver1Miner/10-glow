@@ -3,6 +3,7 @@ extends Node2D
 export var data: Resource = preload("res://src/data/DataResource.tres")
 
 func _ready() -> void:
+	$GUI/InventoryView.visible = true
 	for inter in $Interactables.get_children():
 		if inter.readable:
 			inter.connect("read_interactable", self, "on_read_interactable")

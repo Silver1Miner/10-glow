@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Area2D
 
 signal exit_used()
 export var query: String = "Exit mind space?"

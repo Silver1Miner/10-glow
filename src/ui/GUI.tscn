@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://src/ui/UI.gd" type="Script" id=1]
 [ext_resource path="res://src/ui/Textbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/UI.tres" type="Theme" id=3]
 [ext_resource path="res://assets/ui/CourierPrime-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://src/ui/Transition.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/ui/InventoryView.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 4 )
@@ -21,6 +22,8 @@ text = "Corruption: 0  "
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="InventoryView" parent="." instance=ExtResource( 6 )]
 
 [node name="UI" type="Control" parent="."]
 anchor_right = 1.0

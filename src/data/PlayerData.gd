@@ -3,20 +3,25 @@ extends Node
 var new_game = true
 var current_floor := 1
 var corruption := 0
-var level := 0
+var floors_unlocked := 2
 var mind_side = true
 
 var decorations := {}
-var inventory := ["wall2"]
+var mind_inventory := [
+	"wall1", "wall2"
+]
 
 var main_menu = preload("res://src/menu/MainMenu.tscn")
 var test_world = preload("res://src/world/World.tscn")
 var mind_room = preload("res://src/mind/room/Room.tscn")
 var text_scroll = preload("res://src/UI/TextScroll.tscn")
 
-var unlocked_floors := [
+var floors_choice := [
 	{"name": "Floor 1", "icon": null},
 	{"name": "Floor 2", "icon": null},
+	{"name": "Floor 3", "icon": null},
+	{"name": "Floor 4", "icon": null},
+	{"name": "Floor 5", "icon": null},
 ]
 
 var floors := {

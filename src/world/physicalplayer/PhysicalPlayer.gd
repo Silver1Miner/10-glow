@@ -52,7 +52,7 @@ func physical_interact() -> void:
 		if current_target.has_method("get_query"):
 			var query = current_target.get_query()
 			if current_target.has_method("use_elevator"):
-				interface.populate_item_list(PlayerData.unlocked_floors)
+				interface.populate_item_list(PlayerData.floors_choice.slice(0, PlayerData.floors_unlocked))
 			else:
 				interface.populate_item_list(data.choice)
 			itemlist.visible = true
@@ -80,6 +80,9 @@ func _on_item_activated(index) -> void:
 		elif current_target.has_method("physical_interact"):
 			current_target.physical_interact()
 			interface.visible = false
+			if current_target.has_method("get_effect_statement"):
+				textbox.play_dialogue({"0": {"name":"", "profile":"",
+			"text":current_target.get_effect_statement()}})
 		elif current_target.has_method("use_elevator"):
 			current_target.use_elevator(index)
 			interface.visible = false

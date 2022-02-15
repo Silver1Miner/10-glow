@@ -1,0 +1,59 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/ui/UI.tres" type="Theme" id=1]
+[ext_resource path="res://src/ui/InventoryView.gd" type="Script" id=2]
+[ext_resource path="res://assets/mind/block_02.png" type="Texture" id=3]
+
+[node name="InventoryView" type="VBoxContainer"]
+margin_right = 176.0
+margin_bottom = 55.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_right = 176.0
+margin_bottom = 19.0
+text = "Inventory"
+
+[node name="Items" type="HBoxContainer" parent="."]
+margin_top = 23.0
+margin_right = 176.0
+margin_bottom = 55.0
+
+[node name="Key1" type="TextureRect" parent="Items"]
+margin_right = 32.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+texture = ExtResource( 3 )
+expand = true
+
+[node name="Key2" type="TextureRect" parent="Items"]
+margin_left = 36.0
+margin_right = 68.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+expand = true
+
+[node name="Key3" type="TextureRect" parent="Items"]
+margin_left = 72.0
+margin_right = 104.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+expand = true
+
+[node name="Key4" type="TextureRect" parent="Items"]
+margin_left = 108.0
+margin_right = 140.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+expand = true
+
+[node name="Key5" type="TextureRect" parent="Items"]
+margin_left = 144.0
+margin_right = 176.0
+margin_bottom = 32.0
+rect_min_size = Vector2( 32, 32 )
+expand = true

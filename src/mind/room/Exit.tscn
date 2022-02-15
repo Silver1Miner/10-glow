@@ -4,11 +4,9 @@
 [ext_resource path="res://src/mind/room/Exit.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 16, 16 )
+extents = Vector2( 18, 18 )
 
-[node name="Exit" type="StaticBody2D"]
-collision_layer = 0
-collision_mask = 0
+[node name="Exit" type="Area2D"]
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
