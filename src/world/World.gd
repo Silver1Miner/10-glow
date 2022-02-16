@@ -12,7 +12,8 @@ func _ready() -> void:
 	if PlayerData.mind_side:
 		$PhysicalPlayer.position.x = $MindExit.position.x
 	else:
-		$PhysicalPlayer.position.x = $Elevator.position.x
+		$PhysicalPlayer.position.x = $Elevator.position.x - 164
+		$PhysicalPlayer/Sprite.flip_h = true
 
 func on_read_interactable(read_id):
 	$GUI/Message/Text.text = data.readings[read_id]

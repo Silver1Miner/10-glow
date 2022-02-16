@@ -2,16 +2,18 @@ extends Node2D
 
 export var grid: Resource = preload("res://src/data/Grid.tres")
 export var data: Resource = load("res://src/data/DataResource.tres")
-export var ui_cooldown := 0.05
+export var ui_cooldown := 0.4
 onready var _timer: Timer = $Timer
 onready var _ray: RayCast2D = $RayCast2D
+onready var _tween: Tween = $Tween
 onready var interface = $"../GUI/UI"
 onready var itemlist = $"../GUI/UI/ItemList"
 onready var textbox = $"../GUI/UI/Textbox"
 
+var left = true
 var current_target = null
 var cell := Vector2.ZERO
-var tile_size = 32
+var tile_size = 64
 var inputs = {
 	"ui_right": Vector2.RIGHT, "ui_left": Vector2.LEFT,
 	"ui_up": Vector2.UP, "ui_down": Vector2.DOWN
@@ -38,14 +40,60 @@ func _unhandled_input(event) -> void:
 		interact()
 
 func move(dir) -> void:
+	match inputs[dir]:
+		Vector2.UP:
+			$Sprite.frame = 1
+		Vector2.DOWN:
+			$Sprite.frame = 8
+		Vector2.LEFT:
+			$Sprite.frame = 5
+		Vector2.RIGHT:
+			$Sprite.frame = 12
 	_ray.cast_to = inputs[dir] * tile_size
 	_ray.force_raycast_update()
 	if !_ray.is_colliding():
-		position += inputs[dir] * tile_size
+		move_tween(dir)
 	else:
 		interact()
 	cell = grid.get_cell_coordinates(position)
 	_timer.start()
+
+func move_tween(dir) -> void:
+	if not _tween.interpolate_property(self, "position",
+	position, position + inputs[dir] * tile_size,
+	0.4, Tween.TRANS_QUART, Tween.EASE_IN_OUT):
+		push_error("tween did not interpolate property")
+	if not _tween.start():
+		push_error("tween did not start")
+	match inputs[dir]:
+		Vector2.DOWN:
+			if left:
+				$AnimationPlayer.play("walk_down")
+				left = false
+			else:
+				$AnimationPlayer.play("walk_down_2")
+				left = true
+		Vector2.UP:
+			if left:
+				$AnimationPlayer.play("walk_up")
+				left = false
+			else:
+				$AnimationPlayer.play("walk_up_2")
+				left = true
+		Vector2.LEFT:
+			if left:
+				$AnimationPlayer.play("walk_left")
+				left = false
+			else:
+				$AnimationPlayer.play("walk_left_2")
+				left = true
+		Vector2.RIGHT:
+			if left:
+				$AnimationPlayer.play("walk_right")
+				left = false
+			else:
+				$AnimationPlayer.play("walk_right_2")
+				left = true
 
 func interact() -> void:
 	_ray.force_raycast_update()

@@ -4,7 +4,7 @@
 [ext_resource path="res://src/world/physicalplayer/PhysicalPlayer.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 64, 192 )
+extents = Vector2( 64, 128 )
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -42,11 +42,11 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
-scale = Vector2( 6, 6 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 1 )
 hframes = 7
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 shape = SubResource( 1 )

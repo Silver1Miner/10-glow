@@ -1,7 +1,7 @@
 extends Resource
 
 export var board_size := Vector2(20, 12)
-export var cell_size := Vector2(32, 32)
+export var cell_size := Vector2(64, 64)
 var _half_cell_size = cell_size/2
 
 func get_map_position(cell_coordinates: Vector2) -> Vector2:
