@@ -3,6 +3,7 @@ extends Node2D
 onready var decorations = $Decorations
 
 func _ready() -> void:
+	$GUI/Transition.visible = true
 	$GUI/InventoryView.visible = false
 	if len(PlayerData.decorations) > 0:
 		load_decorations()

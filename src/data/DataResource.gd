@@ -29,9 +29,29 @@ var decorations := [
 ]
 
 var readings := [
+#0
 """We can change the world
 """,
+#1
+"""REMEMBER: Be on the look out for glow worms!
+Infiltrators are always obvious if you look closely enough. They don't fit in.
+They're as obvious as if they were glowing in the dark.
+""",
+#2
+"""""",
+#3
+"""""",
+#4
+"""""",
 ]
+
+var key_conversations = {
+	1: 1,
+	2: 2,
+	3: 3,
+	4: 4,
+	5: 5
+}
 
 var conversations = [
 	{ # 0
@@ -42,9 +62,9 @@ var conversations = [
 	},
 	{ # 1
 	"0": {"name":"red", "profile":"red",
-	"text":"Hello"},
+	"text":"Oh, you're a serious initiate."},
 	"1": {"name":"red", "profile":"red",
-	"text":"I didn't see you get on"},
+	"text":"Here, you'll need this card to access the second floor."},
 	},
 ]
 

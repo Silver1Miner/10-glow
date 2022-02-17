@@ -8,6 +8,8 @@ func get_query() -> String:
 	return query
 
 func use_elevator(floor_number: int) -> void:
+	if floor_number == PlayerData.current_floor:
+		return
 	PlayerData.current_floor = floor_number
 	PlayerData.mind_side = false
 	if transition:

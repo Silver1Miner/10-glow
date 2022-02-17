@@ -3,7 +3,7 @@ extends Node
 var new_game = true
 var current_floor := 1
 var corruption := 0
-var floors_unlocked := 2
+var floors_unlocked := 0
 var mind_side = true
 
 var decorations := {}

@@ -29,8 +29,8 @@ func _ready() -> void:
 		base_speed = 30
 		text = data.intro_text.duplicate(true)
 		#PlayerData.next_scene = 30
-		next_level = PlayerData.mind_room
-		PlayerData.new_game = false
+		next_level = PlayerData.floors[1]
+		#PlayerData.new_game = false
 	else:
 		base_speed = 30
 		text = data.credits.duplicate(true)

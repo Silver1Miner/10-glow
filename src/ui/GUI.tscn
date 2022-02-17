@@ -26,6 +26,7 @@ __meta__ = {
 [node name="InventoryView" parent="." instance=ExtResource( 6 )]
 
 [node name="UI" type="Control" parent="."]
+visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
@@ -54,20 +55,30 @@ __meta__ = {
 
 [node name="Message" type="ColorRect" parent="."]
 margin_left = 64.0
-margin_top = 64.0
+margin_top = 80.0
 margin_right = 576.0
-margin_bottom = 280.0
-color = Color( 0, 0, 0, 1 )
+margin_bottom = 296.0
+color = Color( 0, 0, 0, 0.501961 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Text" type="RichTextLabel" parent="Message"]
-margin_right = 504.0
-margin_bottom = 211.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -232.0
+margin_top = -90.0
+margin_right = 232.0
+margin_bottom = 90.0
 custom_fonts/normal_font = SubResource( 1 )
 text = "Testing"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Transition" parent="." instance=ExtResource( 5 )]
+visible = false
 
 [connection signal="item_activated" from="UI/ItemList" to="UI" method="_on_ItemList_item_activated"]
