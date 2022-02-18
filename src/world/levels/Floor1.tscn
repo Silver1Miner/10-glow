@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://src/world/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/world/interactables/Readable.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/world/actors/Character.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/world/interactables/GameEnd.tscn" type="PackedScene" id=4]
 
 [node name="Floor1" instance=ExtResource( 1 )]
 
@@ -15,13 +16,19 @@ id = 1
 query = "Read bulletins?"
 
 [node name="CollisionShape2D" parent="Interactables/Readable" index="0"]
-position = Vector2( 55, 27 )
+position = Vector2( 150, 27 )
 
 [node name="Character" parent="Characters" index="0" instance=ExtResource( 3 )]
-position = Vector2( 680, 195 )
+position = Vector2( 928, 195 )
 
-[node name="PhysicalPlayer" parent="." index="8"]
-position = Vector2( 104, 196 )
+[node name="GameEnd" parent="." index="7" instance=ExtResource( 4 )]
+position = Vector2( 72, 200 )
+
+[node name="MindExit" parent="." index="8"]
+position = Vector2( 581, 272 )
+
+[node name="PhysicalPlayer" parent="." index="9"]
+position = Vector2( 210, 196 )
 
 [editable path="Interactables/Readable"]
 [editable path="PhysicalPlayer"]

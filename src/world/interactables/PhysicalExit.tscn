@@ -6,7 +6,7 @@
 [ext_resource path="res://assets/world/props/potion animation.png" type="Texture" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 128, 64 )
+extents = Vector2( 64, 64 )
 
 [sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 4 )
@@ -69,4 +69,5 @@ self_modulate = Color( 0.505882, 0.505882, 0.505882, 0.776471 )
 position = Vector2( 32, -61 )
 scale = Vector2( 2, 2 )
 frames = SubResource( 10 )
+frame = 7
 playing = true
