@@ -13,7 +13,7 @@ onready var textbox = $"../GUI/UI/Textbox"
 var left = true
 var current_target = null
 var cell := Vector2.ZERO
-var tile_size = 64
+var tile_size = 32
 var inputs = {
 	"ui_right": Vector2.RIGHT, "ui_left": Vector2.LEFT,
 	"ui_up": Vector2.UP, "ui_down": Vector2.DOWN
