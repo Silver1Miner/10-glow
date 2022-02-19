@@ -100,7 +100,7 @@ func interact() -> void:
 	if _ray.is_colliding() and _ray.get_collider().has_method("exit"):
 		current_target = _ray.get_collider()
 		var query = _ray.get_collider().get_query()
-		interface.populate_item_list(data.choice)
+		interface.populate_item_list(PlayerData.choice)
 		itemlist.visible = true
 		interface.visible = true
 		itemlist.select(0)

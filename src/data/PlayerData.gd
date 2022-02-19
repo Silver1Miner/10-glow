@@ -24,6 +24,10 @@ var floors_choice := [
 	{"name": "Floor 5", "icon": null},
 ]
 
+var choice := [
+	{"name": "Yes", "icon": null},
+]
+
 var floors := {
 	1: preload("res://src/world/levels/Floor1.tscn"),
 	2: preload("res://src/world/levels/Floor2.tscn"),

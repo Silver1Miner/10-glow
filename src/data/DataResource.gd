@@ -1,30 +1,19 @@
 extends Resource
 
-enum TYPE {PICTURE, CHAIR}
-
-var choice := [
-	{"name": "Yes", "icon": null},
-]
-
-var elevator := [
-	{"name": "Floor 1", "icon": null},
-	{"name": "Floor 2", "icon": null},
-	{"name": "Floor 3", "icon": null},
-	{"name": "Floor 4", "icon": null},
-]
+enum TYPE {WALL, SOFA}
 
 var decorations := [
-	[# PICTURE
-	{"id": 0, "name": "wall1", "rating":10, "icon": preload("res://assets/mind/furniture/crate_02.png")},
-	{"id": 1, "name": "wall2", "rating":30, "icon": preload("res://assets/mind/furniture/crate_03.png")},
+	[# WALL
+	{"id": 0, "name": "wall1", "rating":10, "icon": preload("res://assets/mind/walls/wall.png")},
+	{"id": 1, "name": "wall2", "rating":30, "icon": preload("res://assets/mind/walls/carpet.png")},
 	],
-	[# CHAIR
-	{"id": 0, "name": "chair1", "rating":0, "icon": preload("res://assets/mind/furniture/crate_02.png")},
-	{"id": 1, "name": "chair2", "rating":3, "icon": preload("res://assets/mind/furniture/crate_03.png")}
+	[# SOFA
+	{"id": 0, "name": "chair1", "rating":0, "icon": preload("res://assets/mind/furniture/chair-green.png")},
+	{"id": 1, "name": "chair2", "rating":3, "icon": preload("res://assets/mind/furniture/chair-green.png")}
 	],
 	[# TABLE
-	{"id": 0, "name": "table1", "rating":3, "icon": preload("res://assets/mind/furniture/crate_02.png")},
-	{"id": 1, "name": "table2", "rating":3, "icon": preload("res://assets/mind/furniture/crate_03.png")}
+	{"id": 0, "name": "table1", "rating":3, "icon": preload("res://assets/mind/furniture/desk.png")},
+	{"id": 1, "name": "table2", "rating":3, "icon": preload("res://assets/mind/furniture/desk.png")}
 	],
 ]
 
@@ -94,10 +83,7 @@ var credits = [
 		"by Jack Anderson"
 	],[
 		"SOUNDTRACK",
-		"'It's Glowtime!' by Vav",
-	],[
-		"ART",
-		"Yanagi"
+		"\"It's Glowtime!\" by Vav",
 	],[
 		"Additional CC0 Assets from",
 		"opengameart.org",

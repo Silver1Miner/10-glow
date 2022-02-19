@@ -54,7 +54,7 @@ func physical_interact() -> void:
 			if current_target.has_method("use_elevator"):
 				interface.populate_item_list(PlayerData.floors_choice.slice(0, PlayerData.floors_unlocked))
 			else:
-				interface.populate_item_list(data.choice)
+				interface.populate_item_list(PlayerData.choice)
 			itemlist.visible = true
 			interface.visible = true
 			itemlist.select(0)
