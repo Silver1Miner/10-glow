@@ -119,7 +119,7 @@ func interact() -> void:
 		interface.visible = true
 		itemlist.select(0)
 		textbox.play_dialogue({"0": {"name":"", "profile":"",
-		"text":"Change decoration?"}})
+		"text":data.query[type]}})
 		itemlist.grab_focus()
 	else:
 		current_target = null
