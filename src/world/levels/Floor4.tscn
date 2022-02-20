@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/world/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/world/keys/key-green.png" type="Texture" id=2]
 [ext_resource path="res://assets/world/background/level4.png" type="Texture" id=3]
+[ext_resource path="res://src/world/actors/Character.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/world/interactables/Readable.tscn" type="PackedScene" id=5]
 
 [node name="Floor4" instance=ExtResource( 1 )]
 
@@ -15,7 +17,35 @@ texture = ExtResource( 2 )
 [node name="Label" parent="." index="4"]
 text = "Floor 4"
 
-[node name="MindExit" parent="." index="7"]
+[node name="Readable" parent="Readables" index="0" instance=ExtResource( 5 )]
+position = Vector2( 824, 168 )
+id = 4
+
+[node name="Character" parent="Characters" index="0" instance=ExtResource( 4 )]
+position = Vector2( 624, 200 )
+corruption_check = 90
+suspicious_text_id = 3
+corrupt_text_id = 4
+normal_text_id = 3
+key_card = 5
+
+[node name="Character2" parent="Characters" index="1" instance=ExtResource( 4 )]
+position = Vector2( 488, 200 )
+corruption_check = 90
+suspicious_text_id = 3
+corrupt_text_id = 4
+normal_text_id = 3
+key_card = 5
+
+[node name="Character3" parent="Characters" index="2" instance=ExtResource( 4 )]
+position = Vector2( 352, 200 )
+corruption_check = 90
+suspicious_text_id = 3
+corrupt_text_id = 4
+normal_text_id = 3
+key_card = 5
+
+[node name="MindExit" parent="." index="8"]
 position = Vector2( 112, 272 )
 
 [editable path="PhysicalPlayer"]

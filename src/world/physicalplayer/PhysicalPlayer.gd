@@ -48,7 +48,7 @@ func _unhandled_input(event) -> void:
 		message.visible = false
 
 func physical_interact() -> void:
-	if not message.visible and current_target:
+	if not message.visible and current_target and current_target.visible:
 		if current_target.has_method("get_query"):
 			var query = current_target.get_query()
 			if current_target.has_method("use_elevator"):

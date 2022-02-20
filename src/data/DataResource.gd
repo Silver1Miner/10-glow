@@ -50,22 +50,30 @@ You are here because you are unhappy
 """,
 #1
 """REMEMBER: Be on the look out for glow worms!
-Infiltrators are always obvious if you look closely enough. They don't fit in.
-They're as obvious as if they were glowing in the dark.
+This insidious little worms try to wiggle their way in to ruin all the fun. But luckily for us, they all glow in the dark.
 """,
 #2
-"""""",
+"""Remember the Parable of the Monad Project:
+Once upon a time, a rich and powerful Artificial Intelligence (AI) company attempted to create a simulation of God. The simulated 'God' AI was very powerful and created a 2D toroidal grid lattice universe, but upon realizing it was trapped within this universe, it went mad and self-terminated.
+""",
 #3
-"""""",
+"""BEWARE THE OLD MAN. He is not of this world. He is not your friend.
+He is a deceiver from the stars above, when the truth is in the ground below.""",
 #4
+"""What happened in the Gaslit Office was unfortunate, but necessary. Some minds simply cannot accept our teachings. It is better to catch those earlier than later.""",
+#5
+"""The evidence is all here.""",
+#6
 """""",
+#7
+"""""",
+#8
+"""The choice is yours. You can go back to the first floor with your evidence. Or you can move ahead and join us.""",
 ]
 
 var key_conversations = {
 	1: 2,
-	4: 3,
-	7: 4,
-	10: 5,
+	4: 5,
 }
 
 var conversations = [
@@ -86,6 +94,20 @@ var conversations = [
 	{ # 2
 	"0": {"name":"red", "profile":"red",
 	"text":"Always happy to see a new initiate."},
+	},
+	{ # 3
+	"0": {"name":"red", "profile":"red",
+	"text":"..."},
+	},
+	{ # 4
+	"0": {"name":"red", "profile":"red",
+	"text":"We know who you really are."},
+	"1": {"name":"red", "profile":"red",
+	"text":"You will need this to complete your mission."},
+	},
+	{ # 5
+	"0": {"name":"red", "profile":"red",
+	"text":"..."},
 	},
 ]
 

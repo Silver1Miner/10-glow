@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://src/world/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/world/keys/key-red.png" type="Texture" id=2]
 [ext_resource path="res://assets/world/background/level5.png" type="Texture" id=3]
+[ext_resource path="res://src/world/interactables/Readable.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/world/interactables/GameEnd.tscn" type="PackedScene" id=5]
 
 [node name="Floor5" instance=ExtResource( 1 )]
 
@@ -15,8 +17,27 @@ texture = ExtResource( 2 )
 [node name="Label" parent="." index="4"]
 text = "Floor 5"
 
-[node name="MindExit" parent="." index="7"]
-position = Vector2( 112, 272 )
+[node name="Readable" parent="Readables" index="0" instance=ExtResource( 4 )]
+position = Vector2( 824, 160 )
+id = 5
+
+[node name="Readable2" parent="Readables" index="1" instance=ExtResource( 4 )]
+position = Vector2( 648, 160 )
+id = 6
+
+[node name="Readable3" parent="Readables" index="2" instance=ExtResource( 4 )]
+position = Vector2( 472, 160 )
+id = 7
+
+[node name="Readable" parent="." index="6" instance=ExtResource( 4 )]
+position = Vector2( 296, 160 )
+id = 8
+
+[node name="GameEnd" parent="." index="8" instance=ExtResource( 5 )]
+position = Vector2( 72, 200 )
+
+[node name="MindExit" parent="." index="10"]
+position = Vector2( -120, 272 )
 
 [editable path="PhysicalPlayer"]
 [editable path="GUI"]
