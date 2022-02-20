@@ -3,11 +3,13 @@
 [ext_resource path="res://src/ui/UI.gd" type="Script" id=1]
 [ext_resource path="res://src/ui/Textbox.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ui/UI.tres" type="Theme" id=3]
-[ext_resource path="res://assets/ui/CourierPrime-Regular.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://assets/ui/MouseMemoirs-Regular.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://src/ui/Transition.tscn" type="PackedScene" id=5]
 [ext_resource path="res://src/ui/InventoryView.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
+size = 20
+extra_spacing_char = 1
 font_data = ExtResource( 4 )
 
 [node name="GUI" type="CanvasLayer"]

@@ -61,6 +61,8 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Readables" type="Node2D" parent="."]
+
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Characters" type="Node2D" parent="."]

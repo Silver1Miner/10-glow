@@ -10,26 +10,25 @@
 [node name="Label" parent="." index="4"]
 text = "Floor 1"
 
-[node name="Readable" parent="Interactables" index="0" instance=ExtResource( 2 )]
+[node name="Readable" parent="Readables" index="0" instance=ExtResource( 2 )]
 position = Vector2( 200, 136 )
-id = 1
 query = "Read bulletins?"
 
-[node name="CollisionShape2D" parent="Interactables/Readable" index="0"]
+[node name="CollisionShape2D" parent="Readables/Readable" index="0"]
 position = Vector2( 150, 27 )
-
-[node name="Character" parent="Characters" index="0" instance=ExtResource( 3 )]
-position = Vector2( 928, 195 )
 
 [node name="GameEnd" parent="." index="7" instance=ExtResource( 4 )]
 position = Vector2( 72, 200 )
 
-[node name="MindExit" parent="." index="8"]
+[node name="Character" parent="Characters" index="0" instance=ExtResource( 3 )]
+position = Vector2( 928, 195 )
+
+[node name="MindExit" parent="." index="9"]
 position = Vector2( 581, 272 )
 
-[node name="PhysicalPlayer" parent="." index="9"]
+[node name="PhysicalPlayer" parent="." index="10"]
 position = Vector2( 210, 196 )
 
-[editable path="Interactables/Readable"]
+[editable path="Readables/Readable"]
 [editable path="PhysicalPlayer"]
 [editable path="GUI"]

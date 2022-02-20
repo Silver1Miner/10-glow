@@ -43,16 +43,16 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event) -> void:
 	if not interface.visible and event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept"):
-		message.visible = false
 		physical_interact()
 		get_tree().set_input_as_handled()
+		message.visible = false
 
 func physical_interact() -> void:
 	if not message.visible and current_target:
 		if current_target.has_method("get_query"):
 			var query = current_target.get_query()
 			if current_target.has_method("use_elevator"):
-				interface.populate_item_list(PlayerData.floors_choice.slice(0, PlayerData.floors_unlocked))
+				interface.populate_item_list(PlayerData.floors_choice.slice(0, PlayerData.floors_unlocked-1))
 			else:
 				interface.populate_item_list(PlayerData.choice)
 			itemlist.visible = true

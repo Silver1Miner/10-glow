@@ -59,12 +59,13 @@ patch_margin_top = 15
 patch_margin_right = 14
 patch_margin_bottom = 13
 
-[node name="Text" type="RichTextLabel" parent="Sections/TextBox"]
+[node name="Text" type="Label" parent="Sections/TextBox"]
 margin_left = 15.0
 margin_top = 10.0
 margin_right = 465.0
 margin_bottom = 70.0
-text = " Welcome!"
+text = "Welcome!"
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

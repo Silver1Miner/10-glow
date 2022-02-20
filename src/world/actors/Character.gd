@@ -1,8 +1,17 @@
 extends Area2D
 
-export var text_id = 0
+export var corruption_check = 30
+export var suspicious_text_id = 0
+export var corrupt_text_id = 1
+export var normal_text_id = 2
+export var key_card = 2
 signal play_conversation(text_id)
 
 func converse() -> void:
 	print("converse")
-	emit_signal("play_conversation", text_id)
+	if PlayerData.corruption < corruption_check:
+		emit_signal("play_conversation", suspicious_text_id)
+	elif PlayerData.floors_unlocked < key_card:
+		emit_signal("play_conversation", corrupt_text_id)
+	else:
+		emit_signal("play_conversation", normal_text_id)

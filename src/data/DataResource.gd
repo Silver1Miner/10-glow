@@ -45,7 +45,8 @@ var query := [
 
 var readings := [
 #0
-"""We can change the world
+"""WELCOME TO MIND ROOM.
+You are here because you are unhappy
 """,
 #1
 """REMEMBER: Be on the look out for glow worms!
@@ -61,43 +62,50 @@ They're as obvious as if they were glowing in the dark.
 ]
 
 var key_conversations = {
-	1: 1,
-	2: 2,
-	3: 3,
-	4: 4,
-	5: 5
+	1: 2,
+	4: 3,
+	7: 4,
+	10: 5,
 }
 
 var conversations = [
 	{ # 0
 	"0": {"name":"red", "profile":"red",
-	"text":"Hello"},
+	"text":"New initiate? You do have the New Initiate Yellow Key Card..."},
 	"1": {"name":"red", "profile":"red",
-	"text":"I didn't see you get on"},
+	"text":"But you don't seem that open minded."},
 	},
 	{ # 1
 	"0": {"name":"red", "profile":"red",
 	"text":"Oh, you're a serious initiate."},
 	"1": {"name":"red", "profile":"red",
+	"text":"Sorry, I was worried you might be a glow worm."},
+	"2": {"name":"red", "profile":"red",
 	"text":"Here, you'll need this card to access the second floor."},
+	},
+	{ # 2
+	"0": {"name":"red", "profile":"red",
+	"text":"Always happy to see a new initiate."},
 	},
 ]
 
 var intro_text = [
 	[
-		"Subject: [REDACTED].",
+		"Subject: [REDACTED] Scott.",
 		"Occupation: Field Agent."
 	],[
-		".",
-		".",
+		"PRELIMINARIES",
+		"Agent Scott, we are investigating the cult MIND ROOM.",
+		"This cult has been connected to several disappearances.",
 	],[
-		".",
-		".",
-		".",
+		"WARNINGS",
+		"We believe MIND ROOM conducts very advanced brainwashing.",
+		"You may need to subjected to this during infiltration.",
+		"Be on guard that they do not corrupt your mind.",
 	],[
-		"CURRENT MISSION OBJECTIVES",
+		"MISSION OBJECTIVES",
 		"Infiltrate Cult.",
-		"Collect 10 Pieces of Evidence.",
+		"Collect the Evidence on the Fifth Floor.",
 	],[
 		"Escape Alive.",
 	]

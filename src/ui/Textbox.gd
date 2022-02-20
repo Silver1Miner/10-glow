@@ -33,7 +33,7 @@ func play_dialogue(scene) -> void:
 		end_text()
 	if dialogue[page]["profile"] in profiles:
 		profile.set_texture(profiles[dialogue[page]["profile"]])
-	text.set_bbcode(dialogue[page]["text"])
+	text.set_text(dialogue[page]["text"])
 	text.set_visible_characters(0)
 	set_process_input(true)
 
@@ -54,7 +54,7 @@ func _on_Next_pressed() -> void:
 				page = str(int(page) + 1)
 				if dialogue[page]["profile"] in profiles:
 					profile.set_texture(profiles[dialogue[page]["profile"]])
-				text.set_bbcode(dialogue[page]["text"])
+				text.set_text(dialogue[page]["text"])
 				text.set_visible_characters(0)
 			elif int(page) >= dialogue.size() - 1:
 				end_text()

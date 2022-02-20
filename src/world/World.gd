@@ -5,9 +5,11 @@ export var data: Resource = preload("res://src/data/DataResource.tres")
 func _ready() -> void:
 	$GUI/Transition.visible = true
 	$GUI/InventoryView.visible = true
+	for read in $Readables.get_children():
+		read.connect("read_interactable", self, "on_read_interactable")
 	for inter in $Interactables.get_children():
-		if inter.readable:
-			inter.connect("read_interactable", self, "on_read_interactable")
+		inter.connect("get_key", self, "_on_get_key")
+		inter.connect("get_mind_item", self, "_on_get_mind_item")
 	for chars in $Characters.get_children():
 		chars.connect("play_conversation", self, "on_play_conversation")
 	if PlayerData.new_game:
@@ -18,9 +20,17 @@ func _ready() -> void:
 		$PhysicalPlayer.position.x = $Elevator.position.x - 164
 		$PhysicalPlayer/Sprite.flip_h = true
 
-func on_read_interactable(read_id):
+func on_read_interactable(read_id) -> void:
 	$GUI/Message/Text.text = data.readings[read_id]
 	$GUI/Message.visible = true
+
+func _on_get_key(key_id) -> void:
+	if key_id > PlayerData.floors_unlocked:
+		PlayerData.floors_unlocked = key_id
+
+func _on_get_mind_item(mental_item) -> void:
+	if not mental_item in PlayerData.mind_inventory:
+		PlayerData.mind_inventory.append(mental_item)
 
 func on_play_conversation(converse_id):
 	converse_key = converse_id
