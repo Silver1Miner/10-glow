@@ -41,7 +41,7 @@ __meta__ = {
 [node name="Textbox" parent="UI" instance=ExtResource( 2 )]
 
 [node name="ItemList" type="ItemList" parent="UI"]
-margin_left = 496.0
+margin_left = 464.0
 margin_top = 184.0
 margin_right = 624.0
 margin_bottom = 280.0
@@ -58,6 +58,7 @@ __meta__ = {
 }
 
 [node name="Message" type="ColorRect" parent="."]
+visible = false
 margin_left = 64.0
 margin_top = 80.0
 margin_right = 576.0

@@ -5,35 +5,35 @@ enum TYPE {FLOOR, WALL, DESK, BED, CHAIR, NIGHTSTAND, PAINTING}
 var decorations := [
 	[# FLOOR
 	{"id": 0, "name": "Mold Carpet", "rating":0, "icon": preload("res://assets/mind/walls/carpet.png")},
-	{"id": 1, "name": "Clean Carpet", "rating":10, "icon": preload("res://assets/mind/walls/carpet.png")},
+	{"id": 1, "name": "Clean Carpet", "rating":15, "icon": preload("res://assets/mind/walls/carpet.png")},
 	],
 	[# WALL
-	{"id": 0, "name": "Midlew Wallpaper", "rating":0, "icon": preload("res://assets/mind/walls/wall.png")},
-	{"id": 1, "name": "Clean Wallpaper", "rating":20, "icon": preload("res://assets/mind/walls/wall.png")},
+	{"id": 0, "name": "Mildew Wall", "rating":0, "icon": preload("res://assets/mind/walls/wall.png")},
+	{"id": 1, "name": "Clean Wall", "rating":15, "icon": preload("res://assets/mind/walls/wall.png")},
 	],
 	[# DESK
-	{"id": 0, "name": "desk1", "rating":0, "icon": preload("res://assets/mind/furniture/desk.png")},
-	{"id": 1, "name": "desk2", "rating":30, "icon": preload("res://assets/mind/furniture/desk.png")}
+	{"id": 0, "name": "Termite Desk", "rating":0, "icon": preload("res://assets/mind/furniture/desk.png")},
+	{"id": 1, "name": "Clean Desk", "rating":10, "icon": preload("res://assets/mind/furniture/desk.png")}
 	],
 	[# BED
-	{"id": 0, "name": "bed1", "rating":0, "icon": preload("res://assets/mind/furniture/bed-green.png")},
-	{"id": 1, "name": "bed2", "rating":40, "icon": preload("res://assets/mind/furniture/bed-green.png")}
+	{"id": 0, "name": "Worm Bed", "rating":0, "icon": preload("res://assets/mind/furniture/bed-green.png")},
+	{"id": 1, "name": "Clean Bed", "rating":15, "icon": preload("res://assets/mind/furniture/bed-green.png")}
 	],
 	[# CHAIR
-	{"id": 0, "name": "chair1", "rating":0, "icon": preload("res://assets/mind/furniture/chair-green.png")},
-	{"id": 1, "name": "chair2", "rating":3, "icon": preload("res://assets/mind/furniture/chair-green.png")}
+	{"id": 0, "name": "Stain Chair", "rating":0, "icon": preload("res://assets/mind/furniture/chair-green.png")},
+	{"id": 1, "name": "Clean Chair", "rating":10, "icon": preload("res://assets/mind/furniture/chair-green.png")}
 	],
 	[# NIGHTSTAND
-	{"id": 0, "name": "nightstand1", "rating":0, "icon": preload("res://assets/mind/furniture/bedside-green.png")},
-	{"id": 1, "name": "nightstand2", "rating":4, "icon": preload("res://assets/mind/furniture/bedside-green.png")}
+	{"id": 0, "name": "Rot Stand", "rating":0, "icon": preload("res://assets/mind/furniture/bedside-green.png")},
+	{"id": 1, "name": "Clean Stand", "rating":10, "icon": preload("res://assets/mind/furniture/bedside-green.png")}
 	],
 	[# PAINTING
-	{"id": 0, "name": "painting1", "rating":0, "icon": preload("res://assets/mind/furniture/painting.png")},
-	{"id": 1, "name": "painting2", "rating":2, "icon": preload("res://assets/mind/furniture/painting.png")}
+	{"id": 0, "name": "Photo", "rating":0, "icon": preload("res://assets/mind/furniture/painting.png")},
+	{"id": 1, "name": "Painting", "rating":15, "icon": preload("res://assets/mind/furniture/painting.png")}
 	],
 	[# FRIDGE
-	{"id": 0, "name": "fridge1", "rating":0, "icon": preload("res://assets/mind/furniture/fridge.png")},
-	{"id": 1, "name": "fridge2", "rating":2, "icon": preload("res://assets/mind/furniture/fridge.png")}
+	{"id": 0, "name": "Old Fridge", "rating":0, "icon": preload("res://assets/mind/furniture/fridge.png")},
+	{"id": 1, "name": "Clean Fridge", "rating":10, "icon": preload("res://assets/mind/furniture/fridge.png")}
 	],
 ]
 
@@ -57,26 +57,63 @@ var readings := [
 +"Redocorate as you see fit!"
 ,
 #1
-"""REMEMBER: Be on the look out for glow worms!
-This insidious little worms try to wiggle their way in to ruin all the fun. But luckily for us, they all glow in the dark.
-""",
+"REMEMBER: Be on the look out for glow worms! "\
++"These insidious little worms try to wriggle "\
++"their way in to ruin all the fun. "\
++"But luckily for us, they all glow in "\
++"the dark."
+,
 #2
-"""Remember the Parable of the Monad Project:
-Once upon a time, a rich and powerful Artificial Intelligence (AI) company attempted to create a simulation of God. The simulated 'God' AI was very powerful and created a 2D toroidal grid lattice universe, but upon realizing it was trapped within this universe, it went mad and self-terminated.
-""",
+"The secret of MIND ROOM is no secret at all: "\
++"we only see what we want to see. "\
++"Change your MIND, change what you SEE. "\
++"The answers are all under the melting ice."
+,
 #3
-"""BEWARE THE OLD MAN. He is not of this world. He is not your friend.
-He is a deceiver from the stars above, when the truth is in the ground below.""",
+"BEWARE THE OLD MAN. He is not of this world. "\
++"He is not your friend. "\
++"He is a deceiver from the stars above, "\
++"when the truth is in the ground below. "\
++"What looks like treasure is trash, "\
++" and what looks like trash is treasure."
+,
 #4
-"""What happened in the Gaslit Office was unfortunate, but necessary. Some minds simply cannot accept our teachings. It is better to catch those earlier than later.""",
+"WE WANT TO BE YOUR FRIENDS. "\
++"Who said we were your enemies? Is it that "\
++"you can only see us enemies?"\
+,
 #5
-"""The evidence is all here.""",
+"Our confessions are all here. "\
++"We have NOTHING to hide."
+,
 #6
-"""""",
+"Yes, MIND ROOM owns the AI Research Company "\
++"where all the employees disappeared. "\
++"What happened at the Gaslit Office was "\
++"collateral damage, a necessary sacrifice "\
++"in our mission to guard against our TRUE enemies "\
++"above us. The OLD MAN "\
++"is not your friend. He is an agent of the STARS. "\
++"The STARS are always WATCHING."
+,
 #7
-"""""",
+"Yes, the Monad Project was sponsored by "\
++"MIND ROOM using funds originally intended "\
++"for other projects. "\
++"Monad was our most ambitious project "\
++"and yet our single greatest failure. "\
++"The simulated 'God' AI was very powerful "\
++"and very quickly created a 2D toroidal grid lattice universe unprompted, "\
++"but, strangely, it came to realize it was trapped "\
++"within this universe of its own creation. "\
++"It went mad and self-terminated."\
+,
 #8
-"""The choice is yours. You can go back to the first floor with your evidence. Or you can move ahead and join us.""",
+"You can go back to the "\
++"first floor with our written confessions. "\
++"Or you can move ahead and join us."\
++"\nThe choice is yours."
+,
 ]
 
 var key_conversations = {
@@ -124,7 +161,8 @@ var intro_text = [
 	],[
 		"PRELIMINARIES",
 		"Agent Scott, we are investigating the cult MIND ROOM.",
-		"This cult has been connected to several disappearances.",
+		"This cult has been connected to several disappearances",
+		"and reports of embezzlement, tax evasion, and fraud."
 	],[
 		"WARNINGS",
 		"We believe MIND ROOM conducts very advanced brainwashing.",

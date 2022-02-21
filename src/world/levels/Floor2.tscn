@@ -29,11 +29,17 @@ id = 2
 [node name="Interactable" parent="Interactables" index="0" instance=ExtResource( 5 )]
 position = Vector2( 616, 248 )
 key_id = 3
+corruption_cutoff = 50
 query = "Check water cooler?"
 effect_statement = "Got a Blue Key Card"
 
 [node name="Character" parent="Characters" index="0" instance=ExtResource( 6 )]
 position = Vector2( 624, 200 )
+corruption_check = 50
+suspicious_text_id = 2
+corrupt_text_id = 2
+key_card = 0
+can_disappear = true
 
 [node name="MindExit" parent="." index="8"]
 position = Vector2( 112, 272 )
