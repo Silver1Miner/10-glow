@@ -28,6 +28,7 @@ id = 2
 
 [node name="Interactable" parent="Interactables" index="0" instance=ExtResource( 5 )]
 position = Vector2( 616, 248 )
+key_id = 3
 query = "Check water cooler?"
 effect_statement = "Got a Blue Key Card"
 

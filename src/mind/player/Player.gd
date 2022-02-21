@@ -112,8 +112,8 @@ func interact() -> void:
 		var type = current_target.get_decoration_type()
 		player_has.clear()
 		for dec in data.decorations[type]:
-			if dec["name"] in PlayerData.mind_inventory:
-				player_has.append(dec)
+			#if dec["name"] in PlayerData.mind_inventory:
+			player_has.append(dec)
 		interface.populate_item_list(player_has)
 		itemlist.visible = true
 		interface.visible = true

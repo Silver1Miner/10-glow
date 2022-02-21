@@ -7,10 +7,10 @@ var floors_unlocked := 1
 var mind_side = true
 
 var decorations := {}
-var mind_inventory := [
-	"wall1", "wall2","floor1","floor2","desk1","bed1",
-	"bed2","chair1","chair2","nightstand1","painting1","fridge1"
-]
+#var mind_inventory := [
+#	"wall1", "wall2","floor1","floor2","desk1","bed1",
+#	"bed2","chair1","chair2","nightstand1","painting1","fridge1"
+#]
 
 var main_menu = preload("res://src/menu/MainMenu.tscn")
 var test_world = preload("res://src/world/World.tscn")

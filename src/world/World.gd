@@ -9,7 +9,7 @@ func _ready() -> void:
 		read.connect("read_interactable", self, "on_read_interactable")
 	for inter in $Interactables.get_children():
 		inter.connect("get_key", self, "_on_get_key")
-		inter.connect("get_mind_item", self, "_on_get_mind_item")
+		#inter.connect("get_mind_item", self, "_on_get_mind_item")
 	for chars in $Characters.get_children():
 		chars.connect("play_conversation", self, "on_play_conversation")
 	if PlayerData.new_game:
@@ -27,10 +27,14 @@ func on_read_interactable(read_id) -> void:
 func _on_get_key(key_id) -> void:
 	if key_id > PlayerData.floors_unlocked:
 		PlayerData.floors_unlocked = key_id
+		$GUI/InventoryView.update_inventory_view()
+		$GUI/UI/Textbox.play_dialogue({"0": {"name":"", "profile":"",
+		"text":"Got a Key"}})
 
-func _on_get_mind_item(mental_item) -> void:
-	if not mental_item in PlayerData.mind_inventory:
-		PlayerData.mind_inventory.append(mental_item)
+#func _on_get_mind_item(mental_item) -> void:
+#	if not mental_item in PlayerData.mind_inventory:
+#		PlayerData.mind_inventory.append(mental_item)
+#		$GUI/InventoryView.update_inventory_view()
 
 func on_play_conversation(converse_id):
 	converse_key = converse_id

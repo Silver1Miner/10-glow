@@ -1,7 +1,7 @@
 extends Area2D
 
 export var next_scene: String
-export var query: String = "Enter mind space?"
+export var query: String = "Enter MIND ROOM?"
 onready var transition = $"../GUI/Transition"
 
 func get_query() -> String:

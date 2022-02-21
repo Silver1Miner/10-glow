@@ -4,12 +4,12 @@ enum TYPE {FLOOR, WALL, DESK, BED, CHAIR, NIGHTSTAND, PAINTING}
 
 var decorations := [
 	[# FLOOR
-	{"id": 0, "name": "floor1", "rating":0, "icon": preload("res://assets/mind/walls/carpet.png")},
-	{"id": 1, "name": "floor2", "rating":10, "icon": preload("res://assets/mind/walls/carpet.png")},
+	{"id": 0, "name": "Mold Carpet", "rating":0, "icon": preload("res://assets/mind/walls/carpet.png")},
+	{"id": 1, "name": "Clean Carpet", "rating":10, "icon": preload("res://assets/mind/walls/carpet.png")},
 	],
 	[# WALL
-	{"id": 0, "name": "wall1", "rating":0, "icon": preload("res://assets/mind/walls/wall.png")},
-	{"id": 1, "name": "wall2", "rating":20, "icon": preload("res://assets/mind/walls/wall.png")},
+	{"id": 0, "name": "Midlew Wallpaper", "rating":0, "icon": preload("res://assets/mind/walls/wall.png")},
+	{"id": 1, "name": "Clean Wallpaper", "rating":20, "icon": preload("res://assets/mind/walls/wall.png")},
 	],
 	[# DESK
 	{"id": 0, "name": "desk1", "rating":0, "icon": preload("res://assets/mind/furniture/desk.png")},
@@ -45,9 +45,17 @@ var query := [
 
 var readings := [
 #0
-"""WELCOME TO MIND ROOM.
-You are here because you are unhappy
-""",
+"WELCOME TO MIND ROOM. "\
++"You are here because you are unhappy. "\
++"Perhaps you feel stuck in life. "\
++"Perhaps you are haunted by bad memories you'd rather forget. "\
++"We are here to help."\
++"\nTo begin, walk up to the desk. "\
++"Place three drops of the MIND solution into each eye "\
++"and then look in the MIND screen. "\
++"Your MIND ROOM will appear before you. "\
++"Redocorate as you see fit!"
+,
 #1
 """REMEMBER: Be on the look out for glow worms!
 This insidious little worms try to wiggle their way in to ruin all the fun. But luckily for us, they all glow in the dark.
@@ -85,10 +93,8 @@ var conversations = [
 	},
 	{ # 1
 	"0": {"name":"red", "profile":"red",
-	"text":"Oh, you're a serious initiate."},
+	"text":"Oh, you're a serious initiate. Sorry, I was worried you might be a glow worm."},
 	"1": {"name":"red", "profile":"red",
-	"text":"Sorry, I was worried you might be a glow worm."},
-	"2": {"name":"red", "profile":"red",
 	"text":"Here, you'll need this card to access the second floor."},
 	},
 	{ # 2
@@ -101,9 +107,9 @@ var conversations = [
 	},
 	{ # 4
 	"0": {"name":"red", "profile":"red",
-	"text":"We know who you really are."},
+	"text":"We know who you really are, glow worm."},
 	"1": {"name":"red", "profile":"red",
-	"text":"You will need this to complete your mission."},
+	"text":"But the boss was adamant that you have this. He wants you to see the fifth floor."},
 	},
 	{ # 5
 	"0": {"name":"red", "profile":"red",

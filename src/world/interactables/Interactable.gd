@@ -6,14 +6,16 @@ export var corruption_cutoff = 30
 export var query: String = "Check water cooler?"
 export var effect_statement: String = "Got a Green Key Card"
 export var mental_item: String = ""
+export var deactivated: bool = false
 #export var interactable: bool = true
 #export var readable: bool = false
 #signal read_interactable(id)
 signal get_key(key_id)
-signal get_mind_item(mental_item)
+#signal get_mind_item(mental_item)
 
 func _ready() -> void:
 	visible = PlayerData.corruption > corruption_cutoff
+	deactivated = key_id <= PlayerData.floors_unlocked
 
 func get_query() -> String:
 	return query
@@ -23,8 +25,9 @@ func physical_interact() -> void:
 	#	emit_signal("read_interactable", id)
 	if key_id > PlayerData.floors_unlocked:
 		emit_signal("get_key", key_id)
-	elif len(mental_item) > 0 and not mental_item in PlayerData.mind_inventory:
-		emit_signal("get_mind_item", mental_item)
+		deactivated = key_id <= PlayerData.floors_unlocked
+	#elif len(mental_item) > 0 and not mental_item in PlayerData.mind_inventory:
+	#	emit_signal("get_mind_item", mental_item)
 
 func get_effect_statement() -> String:
 	return effect_statement

@@ -24,6 +24,8 @@ id = 3
 
 [node name="Interactable" parent="Interactables" index="0" instance=ExtResource( 4 )]
 position = Vector2( 248, 290 )
+key_id = 4
+query = "Check trash?"
 
 [node name="Sprite" parent="Interactables/Interactable" index="0"]
 texture = ExtResource( 5 )

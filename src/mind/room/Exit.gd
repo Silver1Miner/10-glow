@@ -1,7 +1,7 @@
 extends Area2D
 
 signal exit_used()
-export var query: String = "Exit mind space?"
+export var query: String = "Exit MIND ROOM?"
 onready var transition = $"../GUI/Transition"
 
 func get_query() -> String:
