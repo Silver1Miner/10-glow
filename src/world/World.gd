@@ -3,6 +3,10 @@ extends Node2D
 export var data: Resource = preload("res://src/data/DataResource.tres")
 
 func _ready() -> void:
+	if PlayerData.corruption > 50:
+		AudioManager.play_layer(true)
+	else:
+		AudioManager.play_layer(false)
 	$GUI/Transition.visible = true
 	$GUI/InventoryView.visible = true
 	for read in $Readables.get_children():

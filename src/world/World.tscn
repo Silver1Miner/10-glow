@@ -87,9 +87,6 @@ visible = false
 [node name="ItemList" parent="GUI/UI" index="1"]
 visible = false
 
-[node name="Message" parent="GUI" index="3"]
-visible = false
-
 [connection signal="text_finished" from="GUI/UI/Textbox" to="." method="_on_Textbox_text_finished"]
 
 [editable path="PhysicalPlayer"]

@@ -17,12 +17,12 @@ func use_elevator(floor_number: int) -> void:
 	#if get_tree().change_scene_to(PlayerData.floors[floor_number]) != OK:
 	#	push_error("failed to change scene")
 
-
 func _on_Elevator_area_entered(area: Area2D) -> void:
+	AudioManager.play_sound(3)
 	if area.is_in_group("player"):
 		$AnimationPlayer.play("OPEN")
 
-
 func _on_Elevator_area_exited(area: Area2D) -> void:
+	AudioManager.play_sound(3)
 	if area.is_in_group("player"):
 		$AnimationPlayer.play_backwards("OPEN")
