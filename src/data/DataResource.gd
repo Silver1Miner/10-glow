@@ -4,35 +4,35 @@ enum TYPE {FLOOR, WALL, DESK, BED, CHAIR, NIGHTSTAND, PAINTING}
 
 var decorations := [
 	[# FLOOR
-	{"id": 0, "name": "Mold Carpet", "rating":0, "icon": preload("res://assets/mind/walls/carpet.png")},
-	{"id": 1, "name": "Clean Carpet", "rating":15, "icon": preload("res://assets/mind/walls/carpet.png")},
+	{"id": 0, "name": "Dirty Carpet", "rating":0, "icon": preload("res://assets/mind/walls/carpet-red.png")},
+	{"id": 1, "name": "Washed Carpet", "rating":15, "icon": preload("res://assets/mind/walls/carpet.png")},
 	],
 	[# WALL
-	{"id": 0, "name": "Mildew Wall", "rating":0, "icon": preload("res://assets/mind/walls/wall.png")},
-	{"id": 1, "name": "Clean Wall", "rating":15, "icon": preload("res://assets/mind/walls/wall.png")},
+	{"id": 0, "name": "Dirty Wall", "rating":0, "icon": preload("res://assets/mind/walls/wall-dark.png")},
+	{"id": 1, "name": "Washed Wall", "rating":15, "icon": preload("res://assets/mind/walls/wall.png")},
 	],
 	[# DESK
-	{"id": 0, "name": "Termite Desk", "rating":0, "icon": preload("res://assets/mind/furniture/desk.png")},
-	{"id": 1, "name": "Clean Desk", "rating":10, "icon": preload("res://assets/mind/furniture/desk.png")}
+	{"id": 0, "name": "Dirty Desk", "rating":0, "icon": preload("res://assets/mind/furniture/desk.png")},
+	{"id": 1, "name": "Washed Desk", "rating":10, "icon": preload("res://assets/mind/furniture/desk.png")}
 	],
 	[# BED
-	{"id": 0, "name": "Worm Bed", "rating":0, "icon": preload("res://assets/mind/furniture/bed-green.png")},
-	{"id": 1, "name": "Clean Bed", "rating":15, "icon": preload("res://assets/mind/furniture/bed-green.png")}
+	{"id": 0, "name": "Dirty Bed", "rating":0, "icon": preload("res://assets/mind/furniture/bed-red.png")},
+	{"id": 1, "name": "Washed Bed", "rating":15, "icon": preload("res://assets/mind/furniture/bed-green.png")}
 	],
 	[# CHAIR
-	{"id": 0, "name": "Stain Chair", "rating":0, "icon": preload("res://assets/mind/furniture/chair-green.png")},
-	{"id": 1, "name": "Clean Chair", "rating":10, "icon": preload("res://assets/mind/furniture/chair-green.png")}
+	{"id": 0, "name": "Dirty Chair", "rating":0, "icon": preload("res://assets/mind/furniture/chair-green.png")},
+	{"id": 1, "name": "Washed Chair", "rating":10, "icon": preload("res://assets/mind/furniture/chair-green.png")}
 	],
 	[# NIGHTSTAND
-	{"id": 0, "name": "Rot Stand", "rating":0, "icon": preload("res://assets/mind/furniture/bedside-green.png")},
-	{"id": 1, "name": "Clean Stand", "rating":10, "icon": preload("res://assets/mind/furniture/bedside-green.png")}
+	{"id": 0, "name": "Dirty Stand", "rating":0, "icon": preload("res://assets/mind/furniture/bedside-red.png")},
+	{"id": 1, "name": "Washed Stand", "rating":10, "icon": preload("res://assets/mind/furniture/bedside-green.png")}
 	],
 	[# PAINTING
-	{"id": 0, "name": "Photo", "rating":0, "icon": preload("res://assets/mind/furniture/painting.png")},
-	{"id": 1, "name": "Painting", "rating":15, "icon": preload("res://assets/mind/furniture/painting.png")}
+	{"id": 0, "name": "Dirty Picture", "rating":0, "icon": preload("res://assets/mind/furniture/painting-out.png")},
+	{"id": 1, "name": "Clean Picture", "rating":15, "icon": preload("res://assets/mind/furniture/painting-alt.png")}
 	],
 	[# FRIDGE
-	{"id": 0, "name": "Old Fridge", "rating":0, "icon": preload("res://assets/mind/furniture/fridge.png")},
+	{"id": 0, "name": "Dirty Fridge", "rating":0, "icon": preload("res://assets/mind/furniture/fridge.png")},
 	{"id": 1, "name": "Clean Fridge", "rating":10, "icon": preload("res://assets/mind/furniture/fridge.png")}
 	],
 ]

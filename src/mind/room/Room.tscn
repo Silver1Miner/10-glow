@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://src/mind/player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://src/mind/room/decorations/Bed.tscn" type="PackedScene" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://src/mind/room/decorations/Desk.tscn" type="PackedScene" id=10]
 [ext_resource path="res://src/mind/room/decorations/BedSide.tscn" type="PackedScene" id=11]
 [ext_resource path="res://src/mind/room/decorations/Fridge.tscn" type="PackedScene" id=12]
+[ext_resource path="res://assets/ui/MouseMemoirs-Regular.ttf" type="DynamicFontData" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 13 )
 
 [node name="Room" type="Node2D"]
 script = ExtResource( 4 )
@@ -41,7 +45,7 @@ decoration_id = 2
 decoration_type = 2
 
 [node name="Bed" parent="Decorations" instance=ExtResource( 2 )]
-position = Vector2( 224, 128 )
+position = Vector2( 192, 128 )
 decoration_id = 3
 decoration_type = 3
 
@@ -51,7 +55,7 @@ decoration_id = 4
 decoration_type = 4
 
 [node name="BedSide" parent="Decorations" instance=ExtResource( 11 )]
-position = Vector2( 192, 128 )
+position = Vector2( 256, 128 )
 decoration_id = 5
 decoration_type = 5
 
@@ -75,6 +79,36 @@ position = Vector2( 320, 192 )
 
 [node name="InventoryView" parent="GUI" index="1"]
 visible = false
+
+[node name="Label" type="Label" parent="."]
+margin_left = 18.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 128.0
+custom_fonts/font = SubResource( 1 )
+text = "With the Power of MIND ROOM we can help you by VISUALIZING what is wrong in your MIND."
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 490.0
+margin_top = 64.0
+margin_right = 632.0
+margin_bottom = 149.0
+custom_fonts/font = SubResource( 1 )
+text = "Dirty Mind? Clean it up!
+To clean furniture, walk up to and select it.
+To clean wallpaper and floors, walk up to and select the edges of the room.
+
+Wash your Briain CLEAN!"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="exit_used" from="Exit" to="." method="_on_Exit_exit_used"]
 

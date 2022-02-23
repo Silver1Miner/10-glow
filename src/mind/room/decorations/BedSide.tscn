@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://src/mind/room/Decoration.tscn" type="PackedScene" id=1]
-[ext_resource path="res://assets/mind/furniture/bedside-green.png" type="Texture" id=2]
+[ext_resource path="res://assets/mind/furniture/bedside-red.png" type="Texture" id=2]
 
 [node name="BedSide" instance=ExtResource( 1 )]
 

@@ -24,6 +24,9 @@ func _ready() -> void:
 		$PhysicalPlayer.position.x = $Elevator.position.x - 164
 		$PhysicalPlayer/Sprite.flip_h = true
 
+func _process(_delta: float) -> void:
+	pass
+
 func on_read_interactable(read_id) -> void:
 	$GUI/Message/Text.text = data.readings[read_id]
 	$GUI/Message.visible = true
