@@ -49,8 +49,8 @@ func _unhandled_input(event) -> void:
 
 func physical_interact() -> void:
 	if not message.visible and current_target and current_target.visible:
-		#if "deactivated" in current_target and current_target.deactivated:
-		#	return
+		if "deactivated" in current_target and current_target.deactivated:
+			return
 		if current_target.has_method("get_query"):
 			var query = current_target.get_query()
 			if current_target.has_method("use_elevator"):
@@ -61,8 +61,7 @@ func physical_interact() -> void:
 			interface.visible = true
 			itemlist.select(0)
 			itemlist.grab_focus()
-			textbox.play_dialogue({"0": {"name":"", "profile":"",
-			"text":query}})
+			textbox.play_dialogue([query])
 		elif not interface.visible and current_target.has_method("converse"):
 			itemlist.visible = false
 			interface.visible = true
@@ -82,9 +81,6 @@ func _on_item_activated(index) -> void:
 		elif current_target.has_method("physical_interact"):
 			current_target.physical_interact()
 			interface.visible = false
-			if current_target.has_method("get_effect_statement"):
-				textbox.play_dialogue({"0": {"name":"", "profile":"",
-			"text":current_target.get_effect_statement()}})
 		elif current_target.has_method("use_elevator"):
 			current_target.use_elevator(index)
 			interface.visible = false

@@ -1,22 +1,19 @@
 extends Control
 
-var page := "0"
+var page := 0
 var text_playing = true
+var ending = false
 var dialogue = {}
 onready var timer := $Timer
 onready var text := $Sections/TextBox/Text
 onready var next_button := $Sections/ButtonBox/Next
 onready var skip_button := $Sections/ButtonBox/Skip
-onready var profile := $Sections/ProfileBox/Profile
 
 signal text_finished()
-var test_dialogue = {
-	"0": {"name":"red", "profile":"red",
-	"text":"0123456789!"},
-	"1": {"name":"red", "profile":"red",
-	"text":"the quick brown fox jumps over the lazy dog"},
-}
-var profiles = {}
+var test_dialogue = [
+	"0123456789!",
+	"the quick brown fox jumps over the lazy dog",
+]
 
 func _ready() -> void:
 	timer.wait_time = 0.05
@@ -28,12 +25,10 @@ func play_dialogue(scene) -> void:
 	timer.start()
 	dialogue = scene.duplicate(true)
 	text_playing = true
-	page = "0"
-	if not page in dialogue:
+	page = 0
+	if page > len(dialogue):
 		end_text()
-	if dialogue[page]["profile"] in profiles:
-		profile.set_texture(profiles[dialogue[page]["profile"]])
-	text.set_text(dialogue[page]["text"])
+	text.set_text(dialogue[page])
 	text.set_visible_characters(0)
 	set_process_input(true)
 
@@ -44,17 +39,17 @@ func _unhandled_input(event: InputEvent) -> void:
 			_on_Next_pressed()
 
 func end_text() -> void:
-	visible = false
 	emit_signal("text_finished")
+	if ending:
+		return
+	visible = false
 
 func _on_Next_pressed() -> void:
 	if text_playing:
 		if text.get_visible_characters() > text.get_total_character_count():
 			if int(page) < dialogue.size() - 1:
-				page = str(int(page) + 1)
-				if dialogue[page]["profile"] in profiles:
-					profile.set_texture(profiles[dialogue[page]["profile"]])
-				text.set_text(dialogue[page]["text"])
+				page += 1
+				text.set_text(dialogue[page])
 				text.set_visible_characters(0)
 			elif int(page) >= dialogue.size() - 1:
 				end_text()

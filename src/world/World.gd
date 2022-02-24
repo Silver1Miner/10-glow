@@ -1,12 +1,11 @@
 extends Node2D
 
 export var data: Resource = preload("res://src/data/DataResource.tres")
+export var corruption_cutoff = 50
 
 func _ready() -> void:
-	if PlayerData.corruption > 50:
-		AudioManager.play_layer(true)
-	else:
-		AudioManager.play_layer(false)
+	AudioManager.play_layer(PlayerData.corruption > corruption_cutoff)
+	$Background2.visible = PlayerData.corruption > corruption_cutoff
 	$GUI/Transition.visible = true
 	$GUI/InventoryView.visible = true
 	for read in $Readables.get_children():
@@ -31,12 +30,14 @@ func on_read_interactable(read_id) -> void:
 	$GUI/Message/Text.text = data.readings[read_id]
 	$GUI/Message.visible = true
 
-func _on_get_key(key_id) -> void:
+func _on_get_key(key_id, effect_statement) -> void:
 	if key_id > PlayerData.floors_unlocked:
 		PlayerData.floors_unlocked = key_id
+		yield(get_tree().create_timer(0.5), "timeout")
 		$GUI/InventoryView.update_inventory_view()
-		$GUI/UI/Textbox.play_dialogue({"0": {"name":"", "profile":"",
-		"text":"Got a Key"}})
+		$GUI/UI.visible = true
+		$GUI/UI/ItemList.visible = false
+		$GUI/UI/Textbox.play_dialogue([effect_statement])
 
 #func _on_get_mind_item(mental_item) -> void:
 #	if not mental_item in PlayerData.mind_inventory:

@@ -16,6 +16,7 @@ var main_menu = preload("res://src/menu/MainMenu.tscn")
 var test_world = preload("res://src/world/World.tscn")
 var mind_room = preload("res://src/mind/room/Room.tscn")
 var text_scroll = preload("res://src/UI/TextScroll.tscn")
+var ending = preload("res://src/ui/Ending.tscn")
 
 var floors_choice := [
 	{"name": "Floor 1", "icon": null},

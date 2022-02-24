@@ -33,6 +33,14 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Background2" type="TextureRect" parent="."]
+margin_top = 80.0
+margin_right = 1040.0
+margin_bottom = 330.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Elevator" parent="." instance=ExtResource( 7 )]
 position = Vector2( 1160, 200 )
 

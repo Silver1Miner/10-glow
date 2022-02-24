@@ -12,7 +12,7 @@ var decorations := [
 	{"id": 1, "name": "Washed Wall", "rating":15, "icon": preload("res://assets/mind/walls/wall.png")},
 	],
 	[# DESK
-	{"id": 0, "name": "Dirty Desk", "rating":0, "icon": preload("res://assets/mind/furniture/desk.png")},
+	{"id": 0, "name": "Dirty Desk", "rating":0, "icon": preload("res://assets/mind/furniture/desk-red.png")},
 	{"id": 1, "name": "Washed Desk", "rating":10, "icon": preload("res://assets/mind/furniture/desk.png")}
 	],
 	[# BED
@@ -20,7 +20,7 @@ var decorations := [
 	{"id": 1, "name": "Washed Bed", "rating":15, "icon": preload("res://assets/mind/furniture/bed-green.png")}
 	],
 	[# CHAIR
-	{"id": 0, "name": "Dirty Chair", "rating":0, "icon": preload("res://assets/mind/furniture/chair-green.png")},
+	{"id": 0, "name": "Dirty Chair", "rating":0, "icon": preload("res://assets/mind/furniture/chair-red.png")},
 	{"id": 1, "name": "Washed Chair", "rating":10, "icon": preload("res://assets/mind/furniture/chair-green.png")}
 	],
 	[# NIGHTSTAND
@@ -32,7 +32,7 @@ var decorations := [
 	{"id": 1, "name": "Clean Picture", "rating":15, "icon": preload("res://assets/mind/furniture/painting-alt.png")}
 	],
 	[# FRIDGE
-	{"id": 0, "name": "Dirty Fridge", "rating":0, "icon": preload("res://assets/mind/furniture/fridge.png")},
+	{"id": 0, "name": "Dirty Fridge", "rating":0, "icon": preload("res://assets/mind/furniture/fridge-red.png")},
 	{"id": 1, "name": "Clean Fridge", "rating":10, "icon": preload("res://assets/mind/furniture/fridge.png")}
 	],
 ]
@@ -122,36 +122,29 @@ var key_conversations = {
 }
 
 var conversations = [
-	{ # 0
-	"0": {"name":"red", "profile":"red",
-	"text":"New initiate? You do have the New Initiate Yellow Key Card..."},
-	"1": {"name":"red", "profile":"red",
-	"text":"But you don't seem that open minded."},
-	},
-	{ # 1
-	"0": {"name":"red", "profile":"red",
-	"text":"Oh, you're a serious initiate. Sorry, I was worried you might be a glow worm."},
-	"1": {"name":"red", "profile":"red",
-	"text":"Here, you'll need this card to access the second floor."},
-	},
-	{ # 2
-	"0": {"name":"red", "profile":"red",
-	"text":"Always happy to see a new initiate."},
-	},
-	{ # 3
-	"0": {"name":"red", "profile":"red",
-	"text":"..."},
-	},
-	{ # 4
-	"0": {"name":"red", "profile":"red",
-	"text":"We know who you really are, glow worm."},
-	"1": {"name":"red", "profile":"red",
-	"text":"But the boss was adamant that you have this. He wants you to see the fifth floor."},
-	},
-	{ # 5
-	"0": {"name":"red", "profile":"red",
-	"text":"..."},
-	},
+	[ # 0
+	"New initiate? You do have the New Initiate Yellow Key Card...",
+	"But you don't seem that open minded.",
+	],
+	[ # 1
+	"Oh, you're a serious initiate. Sorry, I was worried you might be a glow worm.",
+	"Here, you'll need this card to access the second floor.",
+	"(Got a Grey Key Card)",
+	],
+	[ # 2
+	"Always happy to see a new initiate.",
+	],
+	[ # 3
+	"...",
+	],
+	[ # 4
+	"We know who you really are, glow worm.",
+	"But the boss was adamant that you have this. He wants you to see the fifth floor.",
+	"(Got a Red Key Card)",
+	],
+	[ # 5
+	"...",
+	],
 ]
 
 var intro_text = [

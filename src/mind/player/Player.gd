@@ -104,8 +104,7 @@ func interact() -> void:
 		itemlist.visible = true
 		interface.visible = true
 		itemlist.select(0)
-		textbox.play_dialogue({"0": {"name":"", "profile":"",
-		"text":query}})
+		textbox.play_dialogue([query])
 		itemlist.grab_focus()
 	elif _ray.is_colliding() and _ray.get_collider().has_method("interact"):
 		current_target = _ray.get_collider()
@@ -118,8 +117,7 @@ func interact() -> void:
 		itemlist.visible = true
 		interface.visible = true
 		itemlist.select(0)
-		textbox.play_dialogue({"0": {"name":"", "profile":"",
-		"text":data.query[type]}})
+		textbox.play_dialogue([data.query[type]])
 		itemlist.grab_focus()
 	else:
 		current_target = null

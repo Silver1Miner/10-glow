@@ -11,10 +11,10 @@
 [node name="Background" parent="." index="1"]
 texture = ExtResource( 3 )
 
-[node name="Floor" parent="." index="3"]
+[node name="Floor" parent="." index="4"]
 texture = ExtResource( 2 )
 
-[node name="Label" parent="." index="4"]
+[node name="Label" parent="." index="5"]
 text = "Floor 5"
 
 [node name="Readable4" parent="Readables" index="0" instance=ExtResource( 4 )]
@@ -36,7 +36,7 @@ id = 7
 [node name="GameEnd" parent="." index="7" instance=ExtResource( 5 )]
 position = Vector2( 72, 200 )
 
-[node name="MindExit" parent="." index="9"]
+[node name="MindExit" parent="." index="10"]
 position = Vector2( -120, 272 )
 
 [editable path="PhysicalPlayer"]

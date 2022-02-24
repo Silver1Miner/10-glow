@@ -14,8 +14,10 @@ func physical_interact() -> void:
 
 func _on_Readable_area_entered(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		print("player entered")
+		$Sprite.self_modulate = Color(1.2,1.2,1.2)
+		#print("player entered")
 
 func _on_Readable_area_exited(area: Area2D) -> void:
 	if area.is_in_group("player"):
-		print("player exited")
+		$Sprite.self_modulate = Color(1,1,1,1)
+		#print("player exited")

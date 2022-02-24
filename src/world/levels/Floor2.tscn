@@ -12,10 +12,10 @@
 [node name="Background" parent="." index="1"]
 texture = ExtResource( 3 )
 
-[node name="Floor" parent="." index="3"]
+[node name="Floor" parent="." index="4"]
 texture = ExtResource( 2 )
 
-[node name="Label" parent="." index="4"]
+[node name="Label" parent="." index="5"]
 text = "Floor 2"
 
 [node name="Readable" parent="Readables" index="0" instance=ExtResource( 4 )]
@@ -41,7 +41,7 @@ corrupt_text_id = 2
 key_card = 0
 can_disappear = true
 
-[node name="MindExit" parent="." index="8"]
+[node name="MindExit" parent="." index="9"]
 position = Vector2( 112, 272 )
 
 [editable path="PhysicalPlayer"]
