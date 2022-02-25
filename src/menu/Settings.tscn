@@ -25,14 +25,12 @@ __meta__ = {
 }
 
 [node name="VolumeControls" type="VBoxContainer" parent="."]
-anchor_left = 0.5
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -100.0
-margin_top = -74.0
-margin_right = 100.0
-margin_bottom = 74.0
+margin_left = 40.0
+margin_top = -100.0
+margin_right = 240.0
+margin_bottom = 48.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -50,6 +48,8 @@ valign = 2
 margin_top = 52.0
 margin_right = 200.0
 margin_bottom = 68.0
+focus_neighbour_top = NodePath("../../Back")
+focus_neighbour_bottom = NodePath("../SoundVolume")
 max_value = 1.0
 step = 0.1
 
@@ -67,6 +67,8 @@ valign = 2
 margin_top = 132.0
 margin_right = 200.0
 margin_bottom = 148.0
+focus_neighbour_top = NodePath("../MusicVolume")
+focus_neighbour_bottom = NodePath("../../Back")
 max_value = 1.0
 step = 0.1
 
@@ -79,7 +81,80 @@ margin_left = -25.0
 margin_top = -50.0
 margin_right = 25.0
 margin_bottom = -10.0
+focus_neighbour_left = NodePath("../VolumeControls/SoundVolume")
+focus_neighbour_top = NodePath("../VolumeControls/SoundVolume")
+focus_neighbour_right = NodePath("../VolumeControls/MusicVolume")
+focus_neighbour_bottom = NodePath("../VolumeControls/MusicVolume")
 text = "BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Controls" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -340.0
+margin_top = -100.0
+margin_right = -12.0
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Controls"]
+margin_right = 328.0
+margin_bottom = 19.0
+text = "CONTROLS"
+align = 1
+
+[node name="Instructions" type="HBoxContainer" parent="Controls"]
+margin_top = 31.0
+margin_right = 328.0
+margin_bottom = 160.0
+custom_constants/separation = 9
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Controls/Instructions"]
+margin_right = 100.0
+margin_bottom = 129.0
+text = "Move Left
+Move Right
+Move Up
+Move Down
+Accept
+Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Controls/Instructions"]
+margin_left = 109.0
+margin_right = 219.0
+margin_bottom = 129.0
+text = "Left Arrow
+Right Arrow
+Up Arrow
+Down Arrow
+Z
+C"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Controls/Instructions"]
+margin_left = 228.0
+margin_right = 328.0
+margin_bottom = 129.0
+text = "Xbox Left
+Xbox Right
+Xbox Up
+Xbox Down
+Xbox A
+Xbox B"
 __meta__ = {
 "_edit_use_anchors_": false
 }

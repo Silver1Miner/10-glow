@@ -17,6 +17,14 @@ func _on_Quit_pressed() -> void:
 
 func _on_Credits_pressed() -> void:
 	$Credits.visible = true
+	$Credits/Button.grab_focus()
 
 func _on_Settings_pressed() -> void:
 	$Settings.visible = true
+	$Settings/Back.grab_focus()
+
+func _on_Button_pressed() -> void:
+	$Options/NewGame.grab_focus()
+
+func _on_Back_pressed() -> void:
+	$Options/NewGame.grab_focus()

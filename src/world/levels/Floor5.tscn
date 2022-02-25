@@ -39,6 +39,7 @@ query = "Read bulletin?"
 
 [node name="GameEnd" parent="." index="7" instance=ExtResource( 5 )]
 position = Vector2( 72, 200 )
+ending = 1
 
 [node name="MindExit" parent="." index="10"]
 position = Vector2( -120, 272 )

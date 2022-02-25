@@ -7,7 +7,7 @@ var current_floor := 1
 var corruption := 0
 var floors_unlocked := 1
 var mind_side = true
-
+var ending = 0
 var decorations := {}
 #var mind_inventory := [
 #	"wall1", "wall2","floor1","floor2","desk1","bed1",
@@ -18,7 +18,7 @@ var main_menu = preload("res://src/menu/MainMenu.tscn")
 var test_world = preload("res://src/world/World.tscn")
 var mind_room = preload("res://src/mind/room/Room.tscn")
 var text_scroll = preload("res://src/UI/TextScroll.tscn")
-var ending = preload("res://src/ui/Ending.tscn")
+var ending_scene = preload("res://src/ui/Ending.tscn")
 
 var floors_choice := [
 	{"name": "Floor 1", "icon": null},

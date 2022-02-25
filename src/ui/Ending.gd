@@ -6,10 +6,13 @@ func _ready() -> void:
 	$Next.visible = false
 	textbox.ending = true
 	textbox.timer.wait_time = 0.1
-	textbox.play_dialogue(good)
+	if PlayerData.ending == 0:
+		textbox.play_dialogue(good)
+	else:
+		textbox.play_dialogue(neutral)
 
 func _on_Next_pressed() -> void:
-	if get_tree().change_scene_to(PlayerData.main_menu) != OK:
+	if get_tree().change_scene_to(PlayerData.text_scroll) != OK:
 		push_error("fail to change scene")
 
 func _on_Textbox_text_finished() -> void:
@@ -21,7 +24,7 @@ var good = [
 				  
 Subject: [REDACTED] Scott
 				
-Status: Missing
+Status: Mission Successful. Awaiting further orders.
 """]
 
 var neutral = [
@@ -29,5 +32,5 @@ var neutral = [
 				  
 Subject: [REDACTED] Scott
 				
-Status: Missing
+Status: Missing. Presumed killed in action.
 """]

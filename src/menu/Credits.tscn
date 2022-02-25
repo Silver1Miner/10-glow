@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://assets/ui/UI.tres" type="Theme" id=1]
 [ext_resource path="res://src/menu/Credits.gd" type="Script" id=2]
+[ext_resource path="res://assets/ui/CourierPrime-Regular.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 14
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 10
+font_data = ExtResource( 3 )
 
 [node name="Credits" type="ColorRect"]
 anchor_right = 1.0
@@ -22,38 +31,134 @@ margin_left = -23.5
 margin_top = -50.0
 margin_right = 23.5
 margin_bottom = -30.0
+focus_neighbour_left = NodePath("../ToEndCredits")
+focus_neighbour_top = NodePath("../ToEndCredits")
+focus_neighbour_right = NodePath("../ToEndCredits")
+focus_neighbour_bottom = NodePath("../ToEndCredits")
 text = "Close"
 
 [node name="Credits" type="RichTextLabel" parent="."]
-margin_left = 23.0
-margin_top = 64.0
-margin_right = 624.0
-margin_bottom = 288.0
-text = "FULL CREDITS
-
-GLOW WORM
+margin_left = 24.0
+margin_top = 32.0
+margin_right = 161.0
+margin_bottom = 192.0
+custom_fonts/normal_font = SubResource( 1 )
+text = "GLOW WORM
 by Jack Anderson
 
 SOUNDTRACK
 \"It's Glowtime!\" by Vav
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-ADDITIONAL ASSETS
+[node name="Label" type="Label" parent="."]
+margin_left = 352.0
+margin_top = 32.0
+margin_right = 412.0
+margin_bottom = 51.0
+text = "ASSETS"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-Title: Seasonal Platformer Tiles
-Author:     GrafxKid
-URL: https://opengameart.org/content/seasonal-platformer-tiles
-License(s):  CC0 ( http://creativecommons.org/publicdomain/zero/1.0/legalcode )"
+[node name="Credits2" type="RichTextLabel" parent="."]
+margin_left = 176.0
+margin_top = 51.0
+margin_right = 616.0
+margin_bottom = 296.0
+custom_fonts/normal_font = SubResource( 2 )
+text = "Title: MV Platformer Male (32x64)
+Author: MoikMellah
+URL: https://opengameart.org/content/mv-platformer-male-32x64
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: MV Platformer Female (32x64)
+Author: MoikMellah
+URL: https://opengameart.org/content/mv-platformer-female-32x64
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: Office Space Tileset
+Author: no2games
+URL: https://opengameart.org/content/office-space-tileset
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: Pixel Card Assets
+Author: storiesstrauss
+URL: https://opengameart.org/content/pixel-card-assets
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: Kenney fonts
+Author: Kenney
+URL: https://opengameart.org/content/kenney-fonts
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: Screen (32x26) and Tablet (32x32)
+Author: qubodup
+URL: https://opengameart.org/content/screen-32x26-and-tablet-32x32
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: Potion (animation and pyxeledit document)
+Author: Lovecraft
+URL: https://opengameart.org/content/potion-animation-and-pyxeledit-document
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: isaiah658's Pixel Pack #2
+Author: isaiah658
+URL: https://opengameart.org/content/isaiah658s-pixel-pack-2
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: Misc household items and more! >:)
+Author: NaRNeRZz
+URL: https://opengameart.org/content/misc-household-items-and-more
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: RPG Character 'Agent' NES
+Author: Chasersgaming
+URL: https://opengameart.org/content/rpg-character-agent-nes
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: UI pack
+Author: Kenney
+URL: https://opengameart.org/content/ui-pack
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: UI Pack: RPG Extension
+Author: Kenney
+URL: https://opengameart.org/content/ui-pack-rpg-extension
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: UI pack: Space extension
+Author: Kenney
+URL: https://opengameart.org/content/ui-pack-space-extension
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: 50 RPG sound effects
+Author: Kenney
+URL: https://opengameart.org/content/50-rpg-sound-effects
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: 4 Atmospheric ghostly loops
+Author: Independent.nu (Submitted by qubodup)
+URL: https://opengameart.org/content/4-atmospheric-ghostly-loops
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ToEndCredits" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_right = 0.5
 margin_left = -37.5
 margin_top = 20.0
 margin_right = 37.5
 margin_bottom = 50.0
+focus_neighbour_left = NodePath("../Button")
+focus_neighbour_top = NodePath("../Button")
+focus_neighbour_right = NodePath("../Button")
+focus_neighbour_bottom = NodePath("../Button")
 text = "End Credits"
 __meta__ = {
 "_edit_use_anchors_": false
