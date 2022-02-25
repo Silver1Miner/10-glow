@@ -19,6 +19,15 @@ func _on_Textbox_text_finished() -> void:
 var good = [
 """GOOD ENDING
 				  
-SUBJECT: [REDACTED] Scott
+Subject: [REDACTED] Scott
 				
+Status: Missing
+"""]
+
+var neutral = [
+"""NEUTRAL ENDING
+				  
+Subject: [REDACTED] Scott
+				
+Status: Missing
 """]

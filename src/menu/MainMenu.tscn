@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://src/menu/Credits.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/ui/MainMenu.tres" type="Theme" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://icon.png" type="Texture" id=5]
 [ext_resource path="res://assets/ui/CourierPrime-Regular.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://src/menu/MainMenu.gd" type="Script" id=7]
+[ext_resource path="res://src/menu/Settings.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=2]
 size = 10
@@ -130,7 +131,11 @@ __meta__ = {
 
 [node name="Credits" parent="." instance=ExtResource( 1 )]
 visible = false
+color = Color( 0, 0, 0, 0.862745 )
+
+[node name="Settings" parent="." instance=ExtResource( 8 )]
 
 [connection signal="pressed" from="Options/NewGame" to="." method="_on_NewGame_pressed"]
+[connection signal="pressed" from="Options/Settings" to="." method="_on_Settings_pressed"]
 [connection signal="pressed" from="Options/Credits" to="." method="_on_Credits_pressed"]
 [connection signal="pressed" from="Options/Quit" to="." method="_on_Quit_pressed"]

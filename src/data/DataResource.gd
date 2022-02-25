@@ -46,73 +46,89 @@ var query := [
 var readings := [
 #0
 "WELCOME TO MIND ROOM. "\
-+"You are here because you are unhappy. "\
-+"Perhaps you feel stuck in life. "\
-+"Perhaps you are haunted by bad memories you'd rather forget. "\
-+"We are here to help."\
++"\nYOU are here because you are unhappy, "\
++"and WE are here to help."\
 +"\nTo begin, walk up to the desk. "\
-+"Place three drops of the MIND solution into each eye "\
-+"and then look in the MIND screen. "\
-+"Your MIND ROOM will appear before you. "\
-+"Redocorate as you see fit!"
++"Drink a sip of the green fluid and then "\
++"insert the catheter into either eye. "\
++"Look in the MIND screen with the "\
++"other eye. Your MIND ROOM will appear before you. "\
++"\nWARNING: It is NOT recommended to "\
++"introduce too many changes to your MIND ROOM "\
++"in a single session."
 ,
 #1
 "REMEMBER: Be on the look out for glow worms! "\
 +"These insidious little worms try to wriggle "\
 +"their way in to ruin all the fun. "\
-+"But luckily for us, they all glow in "\
-+"the dark."
++"But luckily for us, they all GLOW in "\
++"the DARK."
 ,
 #2
 "The secret of MIND ROOM is no secret at all: "\
 +"we only see what we want to see. "\
 +"Change your MIND, change what you SEE. "\
-+"The answers are all under the melting ice."
++"\nThe answers lie ABOVE the three zero."
 ,
 #3
 "BEWARE THE OLD MAN. He is not of this world. "\
 +"He is not your friend. "\
-+"He is a deceiver from the stars above, "\
-+"when the truth is in the ground below. "\
-+"What looks like treasure is trash, "\
++"He claims he wishes to help you up, "\
++"when you need to be going DOWN. "\
++"Down below the fifth hexagon."\
++"\nThen you will see, that "\
++"what looks like treasure is trash, "\
 +" and what looks like trash is treasure."
 ,
 #4
 "WE WANT TO BE YOUR FRIENDS. "\
 +"Who said we were your enemies? Is it that "\
-+"you can only see us enemies?"\
++"you can only see us enemies? "\
++"\nYou need only reach ABOVE the 23rd Prime."\
 ,
 #5
-"Our confessions are all here. "\
-+"We have NOTHING to hide."
+"You have completed your mission. "\
++"You have confirmed the "\
++"presence of the incriminating evidence "\
++"on the fifth floor. Return to the first "\
++"floor and leave the building to "\
++"report your findings."
 ,
 #6
-"Yes, MIND ROOM owns the AI Research Company "\
-+"where all the employees disappeared. "\
-+"What happened at the Gaslit Office was "\
-+"collateral damage, a necessary sacrifice "\
-+"in our mission to guard against our TRUE enemies "\
-+"above us. The OLD MAN "\
-+"is not your friend. He is an agent of the STARS. "\
+"Project Report: Gaslit Office. "\
++"\nGoal: Increase available electricty "\
++"to research computers by replacing all "\
++"electric lights with gas lighting. "\
++"\nExperiment: Gas lighting was installed "\
++"at satellite office Number Six."\
++"\nResult: All employees at the office "\
++"are now missing."\
++"\nProposed Next Steps: "\
 +"The STARS are always WATCHING."
 ,
 #7
-"Yes, the Monad Project was sponsored by "\
-+"MIND ROOM using funds originally intended "\
-+"for other projects. "\
-+"Monad was our most ambitious project "\
-+"and yet our single greatest failure. "\
-+"The simulated 'God' AI was very powerful "\
-+"and very quickly created a 2D toroidal grid lattice universe unprompted, "\
-+"but, strangely, it came to realize it was trapped "\
+"Project Report: Monad "\
++"\nExperiment: Construct an AI to simulate a "\
++"God and observe its behavior in constructing "\
++"a universe."\
++"\nResult: AI began construction of a "\
++"universe immediately upon activation, "\
++"featuring 2 spatial and "\
++"1 time dimension in a toroid. "\
++"However, "\
++"the AI came to realize it was trapped "\
 +"within this universe of its own creation. "\
-+"It went mad and self-terminated."\
++"It went mad and self-terminated."
 ,
 #8
-"You can go back to the "\
-+"first floor with our written confessions. "\
-+"Or you can move ahead and join us."\
-+"\nThe choice is yours."
+"Project Report: Mind Worm "\
++"\nGoal: Develop a method to completely "\
++"remodel a person's mind."\
++"\nExperiment: Convince the test subject "\
++"that they are [REDACTED]. Observe their "\
++"resulting behavior."\
++"\nResult: Pending. Experiment is still "\
++"in progress."
 ,
 ]
 
@@ -124,7 +140,7 @@ var key_conversations = {
 var conversations = [
 	[ # 0
 	"New initiate? You do have the New Initiate Yellow Key Card...",
-	"But you don't seem that open minded.",
+	"But you don't seem that open minded to change.",
 	],
 	[ # 1
 	"Oh, you're a serious initiate. Sorry, I was worried you might be a glow worm.",
@@ -132,7 +148,7 @@ var conversations = [
 	"(Got a Grey Key Card)",
 	],
 	[ # 2
-	"Always happy to see a new initiate.",
+	"Always happy to see a new initiate. Just remember not to change too much all at once.",
 	],
 	[ # 3
 	"...",
@@ -164,7 +180,7 @@ var intro_text = [
 	],[
 		"MISSION OBJECTIVES",
 		"Infiltrate Cult.",
-		"Collect the Evidence on the Fifth Floor.",
+		"Gain access to the Fifth Floor containing the evidence.",
 	],[
 		"Escape Alive.",
 	]

@@ -17,3 +17,6 @@ func _on_Quit_pressed() -> void:
 
 func _on_Credits_pressed() -> void:
 	$Credits.visible = true
+
+func _on_Settings_pressed() -> void:
+	$Settings.visible = true

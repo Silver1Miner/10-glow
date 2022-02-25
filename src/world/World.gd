@@ -1,11 +1,12 @@
 extends Node2D
 
 export var data: Resource = preload("res://src/data/DataResource.tres")
-export var corruption_cutoff = 50
+export var corruption_cutoff = 45
 
 func _ready() -> void:
 	AudioManager.play_layer(PlayerData.corruption > corruption_cutoff)
 	$Background2.visible = PlayerData.corruption > corruption_cutoff
+	$shade.visible = PlayerData.corruption > corruption_cutoff
 	$GUI/Transition.visible = true
 	$GUI/InventoryView.visible = true
 	for read in $Readables.get_children():

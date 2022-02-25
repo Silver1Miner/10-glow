@@ -1,5 +1,7 @@
 extends Node
 
+var music_db = 0.5
+var sound_db = 0.9
 var new_game = true
 var current_floor := 1
 var corruption := 0

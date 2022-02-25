@@ -81,6 +81,14 @@ position = Vector2( 516, 272 )
 [node name="PhysicalPlayer" parent="." instance=ExtResource( 1 )]
 position = Vector2( 216, 196 )
 
+[node name="shade" type="ColorRect" parent="."]
+margin_right = 1280.0
+margin_bottom = 360.0
+color = Color( 0, 0, 0, 0.262745 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="GUI" parent="." instance=ExtResource( 2 )]
 
 [node name="InventoryView" parent="GUI" index="1"]

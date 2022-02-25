@@ -12,30 +12,31 @@
 [node name="Background" parent="." index="1"]
 texture = ExtResource( 3 )
 
-[node name="Floor" parent="." index="3"]
+[node name="Floor" parent="." index="4"]
 texture = ExtResource( 2 )
 
-[node name="Label" parent="." index="4"]
+[node name="Label" parent="." index="5"]
 text = "Floor 3"
 
 [node name="Readable" parent="Readables" index="0" instance=ExtResource( 6 )]
 position = Vector2( 824, 160 )
 id = 3
+query = "Read bulletin?"
 
 [node name="Interactable" parent="Interactables" index="0" instance=ExtResource( 4 )]
 position = Vector2( 248, 290 )
 key_id = 4
-corruption_cutoff = 40
+corruption_cutoff = 45
 query = "Check trash?"
 inverted_corruption_check = true
 
 [node name="Sprite" parent="Interactables/Interactable" index="0"]
 texture = ExtResource( 5 )
 
-[node name="MindExit" parent="." index="8"]
+[node name="MindExit" parent="." index="9"]
 position = Vector2( 76, 272 )
 
-[node name="PhysicalPlayer" parent="." index="9"]
+[node name="PhysicalPlayer" parent="." index="10"]
 position = Vector2( 310, 196 )
 
 [editable path="Interactables/Interactable"]
