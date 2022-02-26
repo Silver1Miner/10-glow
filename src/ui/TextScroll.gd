@@ -25,13 +25,15 @@ var text := []
 
 func _ready() -> void:
 	if PlayerData.new_game:
-		$image.texture = null
+		#$image.texture = null
 		base_speed = 30
 		text = data.intro_text.duplicate(true)
 		#PlayerData.next_scene = 30
 		next_level = PlayerData.floors[1]
 		#PlayerData.new_game = false
 	else:
+		if not AudioManager.playing or AudioManager.current != 0:
+			AudioManager.play_music(0, 0)
 		base_speed = 30
 		text = data.credits.duplicate(true)
 		#$image.texture = PlayerData.ending_background

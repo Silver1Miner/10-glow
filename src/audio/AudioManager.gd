@@ -1,21 +1,23 @@
 extends AudioStreamPlayer
 onready var tween = $Tween
+var current = 0
 
 # MUSIC
-func play_music(music_path: String, start:float = 0) -> void:
+func play_music(index: int, start:float = 0) -> void:
+	current = index
 	tween.interpolate_property(self, "volume_db", linear2db(PlayerData.music_db), -80, 0.8, 1, Tween.EASE_IN, 0)
 	tween.start()
 	yield(tween, "tween_completed")
 	tween.interpolate_property(self, "volume_db", -20, linear2db(PlayerData.music_db), 1.0, 1, Tween.EASE_IN, 0)
 	tween.start()
-	stream = load(music_path)
+	stream = load(musics[index])
 	play(start)
 
-func play_layer(on: bool) -> void:
-	if on:
-		$Layer1.play()
-	else:
-		$Layer1.playing = on
+var musics = [
+	"res://assets/audio/its-glowtime.ogg",
+	"res://assets/audio/atmoseerie04.mp3.ogg",
+	"res://assets/audio/atmoseerie02.mp3.ogg"
+]
 
 # SOUND
 var available = []

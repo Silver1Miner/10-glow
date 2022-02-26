@@ -2,10 +2,17 @@ extends Node2D
 
 export var data: Resource = preload("res://src/data/DataResource.tres")
 export var corruption_cutoff = 45
+export var corruption_cutoff_2 = 80
+export var gnome_cutoff = 4
 
 func _ready() -> void:
-	AudioManager.play_layer(PlayerData.corruption > corruption_cutoff)
-	$Background2.visible = PlayerData.corruption > corruption_cutoff
+	randomize()
+	$Gnomer.visible = rand_range(1,10) > gnome_cutoff
+	if PlayerData.corruption > corruption_cutoff:
+		AudioManager.play_music(2, 0)
+	else:
+		AudioManager.play_music(1, 0)
+	$Background2.visible = PlayerData.corruption > corruption_cutoff_2
 	$shade.visible = PlayerData.corruption > corruption_cutoff
 	$GUI/Transition.visible = true
 	$GUI/InventoryView.visible = true

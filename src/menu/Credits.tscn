@@ -69,7 +69,12 @@ margin_top = 51.0
 margin_right = 616.0
 margin_bottom = 296.0
 custom_fonts/normal_font = SubResource( 2 )
-text = "Title: MV Platformer Male (32x64)
+text = "Garden Gnome, potted plants.
+Author: NaRNeRZz
+URL: https://opengameart.org/content/garden-gnome-potted-plants
+License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )
+
+Title: MV Platformer Male (32x64)
 Author: MoikMellah
 URL: https://opengameart.org/content/mv-platformer-male-32x64
 License(s):CC0 ( https://creativecommons.org/publicdomain/zero/1.0/ )

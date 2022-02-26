@@ -5,35 +5,35 @@ enum TYPE {FLOOR, WALL, DESK, BED, CHAIR, NIGHTSTAND, PAINTING}
 var decorations := [
 	[# FLOOR
 	{"id": 0, "name": "Dirty Carpet", "rating":0, "icon": preload("res://assets/mind/walls/carpet-red.png")},
-	{"id": 1, "name": "Washed Carpet", "rating":15, "icon": preload("res://assets/mind/walls/carpet.png")},
+	{"id": 1, "name": "Washed Carpet", "rating":29, "icon": preload("res://assets/mind/walls/carpet.png")},
 	],
 	[# WALL
 	{"id": 0, "name": "Dirty Wall", "rating":0, "icon": preload("res://assets/mind/walls/wall-dark.png")},
-	{"id": 1, "name": "Washed Wall", "rating":15, "icon": preload("res://assets/mind/walls/wall.png")},
+	{"id": 1, "name": "Washed Wall", "rating":17, "icon": preload("res://assets/mind/walls/wall.png")},
 	],
 	[# DESK
 	{"id": 0, "name": "Dirty Desk", "rating":0, "icon": preload("res://assets/mind/furniture/desk-red.png")},
-	{"id": 1, "name": "Washed Desk", "rating":10, "icon": preload("res://assets/mind/furniture/desk.png")}
+	{"id": 1, "name": "Washed Desk", "rating":2, "icon": preload("res://assets/mind/furniture/desk.png")}
 	],
 	[# BED
 	{"id": 0, "name": "Dirty Bed", "rating":0, "icon": preload("res://assets/mind/furniture/bed-red.png")},
-	{"id": 1, "name": "Washed Bed", "rating":15, "icon": preload("res://assets/mind/furniture/bed-green.png")}
+	{"id": 1, "name": "Washed Bed", "rating":13, "icon": preload("res://assets/mind/furniture/bed-green.png")}
 	],
 	[# CHAIR
 	{"id": 0, "name": "Dirty Chair", "rating":0, "icon": preload("res://assets/mind/furniture/chair-red.png")},
-	{"id": 1, "name": "Washed Chair", "rating":10, "icon": preload("res://assets/mind/furniture/chair-green.png")}
+	{"id": 1, "name": "Washed Chair", "rating":5, "icon": preload("res://assets/mind/furniture/chair-green.png")}
 	],
 	[# NIGHTSTAND
 	{"id": 0, "name": "Dirty Stand", "rating":0, "icon": preload("res://assets/mind/furniture/bedside-red.png")},
-	{"id": 1, "name": "Washed Stand", "rating":10, "icon": preload("res://assets/mind/furniture/bedside-green.png")}
+	{"id": 1, "name": "Washed Stand", "rating":3, "icon": preload("res://assets/mind/furniture/bedside-green.png")}
 	],
 	[# PAINTING
 	{"id": 0, "name": "Dirty Picture", "rating":0, "icon": preload("res://assets/mind/furniture/painting-out.png")},
-	{"id": 1, "name": "Clean Picture", "rating":15, "icon": preload("res://assets/mind/furniture/painting-alt.png")}
+	{"id": 1, "name": "Clean Picture", "rating":23, "icon": preload("res://assets/mind/furniture/painting-alt.png")}
 	],
 	[# FRIDGE
 	{"id": 0, "name": "Dirty Fridge", "rating":0, "icon": preload("res://assets/mind/furniture/fridge-red.png")},
-	{"id": 1, "name": "Clean Fridge", "rating":10, "icon": preload("res://assets/mind/furniture/fridge.png")}
+	{"id": 1, "name": "Clean Fridge", "rating":7, "icon": preload("res://assets/mind/furniture/fridge.png")}
 	],
 ]
 
@@ -53,29 +53,29 @@ var readings := [
 +"insert the catheter into either eye. "\
 +"Look in the MIND screen with the "\
 +"other eye. Your MIND ROOM will appear before you. "\
-+"\nWARNING: It is NOT recommended to "\
-+"introduce too many changes to your MIND ROOM "\
-+"in a single session."
++"\nWARNING: Do NOT introduce too "\
++"many changes in a single session. "\
++"New initiates are not to exceed the 6th prime."
 ,
 #1
 "REMEMBER: Be on the look out for glow worms! "\
 +"These insidious little worms try to wriggle "\
 +"their way in to ruin all the fun. "\
 +"But luckily for us, they all GLOW in "\
-+"the DARK."
++"the DARK when they try too hard to fit in."
 ,
 #2
 "The secret of MIND ROOM is no secret at all: "\
 +"we only see what we want to see. "\
 +"Change your MIND, change what you SEE. "\
-+"\nThe answers lie ABOVE the three zero."
++"\nThe water flows from the 16th prime."
 ,
 #3
 "BEWARE THE OLD MAN. He is not of this world. "\
 +"He is not your friend. "\
 +"He claims he wishes to help you up, "\
 +"when you need to be going DOWN. "\
-+"Down below the fifth hexagon."\
++"Go to the 15th prime."\
 +"\nThen you will see, that "\
 +"what looks like treasure is trash, "\
 +" and what looks like trash is treasure."
@@ -83,16 +83,17 @@ var readings := [
 #4
 "WE WANT TO BE YOUR FRIENDS. "\
 +"Who said we were your enemies? Is it that "\
-+"you can only see us enemies? "\
-+"\nYou need only reach ABOVE the 23rd Prime."\
++"you can only see us as enemies? "\
++"\nYou need only reach the 23rd Prime. "\
++"Then you will see, that we are all friends."
 ,
 #5
 "You have completed your mission. "\
 +"You have confirmed the "\
 +"presence of the incriminating evidence "\
 +"on the fifth floor. Return to the first "\
-+"floor and leave the building to "\
-+"report your findings."
++"floor and leave the building via the exit door to "\
++"report your findings. Do NOT use other exit doors."
 ,
 #6
 "Project Report: Gaslit Office. "\
@@ -100,7 +101,7 @@ var readings := [
 +"to research computers by replacing all "\
 +"electric lights with gas lighting. "\
 +"\nExperiment: Gas lighting was installed "\
-+"at satellite office Number Six."\
++"at satellite office Six."\
 +"\nResult: All employees at the office "\
 +"are now missing."\
 +"\nProposed Next Steps: "\
@@ -111,22 +112,23 @@ var readings := [
 +"\nExperiment: Construct an AI to simulate a "\
 +"God and observe its behavior in constructing "\
 +"a universe."\
-+"\nResult: AI began construction of a "\
-+"universe immediately upon activation, "\
-+"featuring 2 spatial and "\
-+"1 time dimension in a toroid. "\
++"\nResult: AI began construction "\
++"immediately upon activation, "\
++"universe was toroidal with 2 spatial and "\
++"1 time dimension. "\
 +"However, "\
-+"the AI came to realize it was trapped "\
++"the AI realized it was trapped "\
 +"within this universe of its own creation. "\
 +"It went mad and self-terminated."
 ,
 #8
 "Project Report: Mind Worm "\
-+"\nGoal: Develop a method to completely "\
-+"remodel a person's mind."\
-+"\nExperiment: Convince the test subject "\
-+"that they are [REDACTED]. Observe their "\
-+"resulting behavior."\
++"\nGoal: Remodel a person's mind just enough "\
++"to convince them to remodel their own mind "\
++ "of their own free will."\
++"\nExperiment: Wipe test subject's memory. Convince subject "\
++"that they are a [REDACTED]. Place them in "\
++"Office Ten, Floor 1. Observe resulting behavior."\
 +"\nResult: Pending. Experiment is still "\
 +"in progress."
 ,
@@ -134,7 +136,7 @@ var readings := [
 
 var key_conversations = {
 	1: 2,
-	4: 5,
+	5: 5,
 }
 
 var conversations = [
@@ -151,32 +153,32 @@ var conversations = [
 	"Always happy to see a new initiate. Just remember not to change too much all at once.",
 	],
 	[ # 3
-	"...",
+	"Ha ha ha. You're glowing in the dark.",
 	],
 	[ # 4
+	"...",
+	],
+	[ # 5
 	"We know who you really are, glow worm.",
 	"But the boss was adamant that you have this. He wants you to see the fifth floor.",
 	"(Got a Red Key Card)",
-	],
-	[ # 5
-	"...",
 	],
 ]
 
 var intro_text = [
 	[
-		"Subject: [REDACTED] Scott.",
+		"Subject: [REDACTED].",
 		"Occupation: Field Agent."
 	],[
 		"PRELIMINARIES",
-		"Agent Scott, we are investigating the cult MIND ROOM.",
-		"This cult has been connected to several disappearances",
-		"and reports of embezzlement, tax evasion, and fraud."
+		"Agent, we are investigating the cult MIND ROOM.",
+		"This cult has been connected to disappearances,",
+		"embezzlement, tax evasion, and fraud."
 	],[
 		"WARNINGS",
-		"We believe MIND ROOM conducts very advanced brainwashing.",
-		"You may need to subjected to this during infiltration.",
-		"Be on guard that they do not corrupt your mind.",
+		"We believe MIND ROOM conducts advanced brainwashing.",
+		"You may need to subjected to it during infiltration.",
+		"Do not let them corrupt your mind.",
 	],[
 		"MISSION OBJECTIVES",
 		"Infiltrate Cult.",

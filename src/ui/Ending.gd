@@ -22,7 +22,7 @@ func _on_Textbox_text_finished() -> void:
 var good = [
 """GOOD ENDING
 				  
-Subject: [REDACTED] Scott
+Subject: [REDACTED]
 				
 Status: Mission Successful. Awaiting further orders.
 """]
@@ -30,7 +30,7 @@ Status: Mission Successful. Awaiting further orders.
 var neutral = [
 """NEUTRAL ENDING
 				  
-Subject: [REDACTED] Scott
+Subject: [REDACTED]
 				
 Status: Missing. Presumed killed in action.
 """]

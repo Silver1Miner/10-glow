@@ -2,7 +2,7 @@ extends Node2D
 
 export var grid: Resource = preload("res://src/data/Grid.tres")
 export var data: Resource = load("res://src/data/DataResource.tres")
-export var ui_cooldown := 0.4
+export var ui_cooldown := 0.8
 onready var _timer: Timer = $Timer
 onready var _ray: RayCast2D = $RayCast2D
 onready var _tween: Tween = $Tween
