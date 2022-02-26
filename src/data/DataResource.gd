@@ -150,7 +150,7 @@ var conversations = [
 	"(Got a Grey Key Card)",
 	],
 	[ # 2
-	"Always happy to see a new initiate. Just remember not to change too much all at once.",
+	"Always happy to see a new initiate.",
 	],
 	[ # 3
 	"Ha ha ha. You're glowing in the dark.",

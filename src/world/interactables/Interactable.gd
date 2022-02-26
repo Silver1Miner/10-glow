@@ -2,7 +2,8 @@ extends Area2D
 
 export var id := 0
 export var key_id := 0
-export var corruption_cutoff = 30
+export var bot_check = 30
+export var top_check = 60
 export var query: String = "Check water cooler?"
 export var effect_statement: String = "Got a Green Key Card"
 #export var mental_item: String = ""
@@ -16,7 +17,7 @@ signal get_key(key_id, effect_statement)
 
 func _ready() -> void:
 	if corruption_check_visible:
-		visible = PlayerData.corruption == corruption_cutoff
+		visible = PlayerData.corruption >= bot_check and PlayerData.corruption <= top_check
 	deactivated = key_id <= PlayerData.floors_unlocked
 
 func get_query() -> String:

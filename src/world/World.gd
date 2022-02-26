@@ -1,27 +1,33 @@
 extends Node2D
 
 export var data: Resource = preload("res://src/data/DataResource.tres")
-export var corruption_cutoff = 45
-export var corruption_cutoff_2 = 80
+export var bot_cutoff = 45
+export var top_cutoff = 80
 export var gnome_cutoff = 4
 
 func _ready() -> void:
 	randomize()
 	$Gnomer.visible = rand_range(1,10) > gnome_cutoff
-	if PlayerData.corruption > corruption_cutoff:
+	if PlayerData.corruption > bot_cutoff:
 		AudioManager.play_music(2, 0)
 	else:
 		AudioManager.play_music(1, 0)
-	$Background2.visible = PlayerData.corruption > corruption_cutoff_2
-	$shade.visible = PlayerData.corruption > corruption_cutoff
+	$Background2.visible = PlayerData.corruption > bot_cutoff and PlayerData.corruption <= top_cutoff
+	$Background3.visible = PlayerData.corruption > top_cutoff
+	$shade.visible = PlayerData.corruption > bot_cutoff
+	$shade2.visible = PlayerData.corruption > top_cutoff
 	$GUI/Transition.visible = true
 	$GUI/InventoryView.visible = true
 	for read in $Readables.get_children():
 		read.connect("read_interactable", self, "on_read_interactable")
 	for inter in $Interactables.get_children():
+		inter.top_check = top_cutoff
+		inter.bot_check = bot_cutoff
 		inter.connect("get_key", self, "_on_get_key")
 		#inter.connect("get_mind_item", self, "_on_get_mind_item")
 	for chars in $Characters.get_children():
+		chars.top_check = top_cutoff
+		chars.bot_check = bot_cutoff
 		chars.connect("play_conversation", self, "on_play_conversation")
 	if PlayerData.new_game:
 		PlayerData.new_game = false

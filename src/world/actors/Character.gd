@@ -1,7 +1,7 @@
 extends Area2D
 
-export var corruption_check = 30
-export var purity_check = 0
+export var bot_check = 30
+export var top_check = 60
 export var suspicious_text_id = 0
 export var tryhard_text_id = 0
 export var corrupt_text_id = 1
@@ -13,7 +13,7 @@ onready var player = $"../../PhysicalPlayer"
 
 func _ready() -> void:
 	if can_disappear:
-		visible = PlayerData.corruption != corruption_check
+		visible = (PlayerData.corruption < bot_check or PlayerData.corruption > top_check)
 	else:
 		visible = true
 
@@ -21,17 +21,17 @@ func converse() -> void:
 	print("converse")
 	if PlayerData.floors_unlocked >= key_card:
 		emit_signal("play_conversation", normal_text_id)
-	elif PlayerData.corruption < corruption_check:
+	elif PlayerData.corruption < bot_check:
 		emit_signal("play_conversation", suspicious_text_id)
-	elif PlayerData.corruption > corruption_check:
+	elif PlayerData.corruption > top_check:
 		emit_signal("play_conversation", tryhard_text_id)
-	elif PlayerData.corruption == corruption_check and PlayerData.floors_unlocked < key_card:
+	elif PlayerData.floors_unlocked < key_card:
 		emit_signal("play_conversation", corrupt_text_id)
 	else:
 		emit_signal("play_conversation", normal_text_id)
 
 func _process(_delta: float) -> void:
-	if PlayerData.corruption < corruption_check and player.position.x < position.x:
+	if (PlayerData.corruption < bot_check or PlayerData.corruption > top_check) and player.position.x < position.x:
 		$Sprite.flip_h = true
 	else:
 		$Sprite.flip_h = false
