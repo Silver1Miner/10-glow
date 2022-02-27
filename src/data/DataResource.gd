@@ -55,37 +55,40 @@ var readings := [
 +"other eye. Your MIND ROOM will appear before you. "\
 +"\nWARNING: Do NOT introduce too "\
 +"many changes in a single session. "\
-+"New initiates are not to exceed the 6th prime."
++"Pace yourself by counting the Prime Numbers."
 ,
 #1
 "REMEMBER: Be on the look out for glow worms! "\
 +"These insidious little worms try to wriggle "\
 +"their way in to ruin all the fun. "\
 +"But luckily for us, they all GLOW in "\
-+"the DARK when they try too hard to fit in."
++"the DARK when they try too hard to fit in. "\
++"They don't know how to PACE themselves by "\
++"counting the primes."
 ,
 #2
 "The secret of MIND ROOM is no secret at all: "\
 +"we only see what we want to see. "\
 +"Change your MIND, change what you SEE. "\
-+"\nThe water flows from the 16th prime."
++"\nThe water flows from the 16th to the 19th."
 ,
 #3
 "BEWARE THE OLD MAN. He is not of this world. "\
 +"He is not your friend. "\
 +"He claims he wishes to help you up, "\
-+"when you need to be going DOWN. "\
-+"Go to the 15th prime."\
-+"\nThen you will see, that "\
-+"what looks like treasure is trash, "\
++"when you need to be going DOWN "\
++"below the 15th prime."\
++"\nThen you will see, that one cannot "\
++"force change. It must come at its own "\
++"pace. What looks like treasure is trash, "\
 +" and what looks like trash is treasure."
 ,
 #4
 "WE WANT TO BE YOUR FRIENDS. "\
 +"Who said we were your enemies? Is it that "\
 +"you can only see us as enemies? "\
-+"\nYou need only reach the 23rd Prime. "\
-+"Then you will see, that we are all friends."
++"\nBetween the 23rd and the 24th, "\
++"you will see, that we are all friends."
 ,
 #5
 "You have completed your mission. "\
@@ -171,9 +174,9 @@ var intro_text = [
 		"Occupation: Field Agent."
 	],[
 		"PRELIMINARIES",
-		"Agent, we are investigating the cult MIND ROOM.",
-		"This cult has been connected to disappearances,",
-		"embezzlement, tax evasion, and fraud."
+		"Agent, we are investigating the cult MIND ROOM,",
+		"a cult obsessed with Artificial Intelligence,",
+		"mental reprogramming, and prime numbers.",
 	],[
 		"WARNINGS",
 		"We believe MIND ROOM conducts advanced brainwashing.",

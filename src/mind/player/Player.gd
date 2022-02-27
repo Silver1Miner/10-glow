@@ -1,8 +1,7 @@
 extends Node2D
 
-export var grid: Resource = preload("res://src/data/Grid.tres")
 export var data: Resource = load("res://src/data/DataResource.tres")
-export var ui_cooldown := 0.8
+export var ui_cooldown := 0.4
 onready var _timer: Timer = $Timer
 onready var _ray: RayCast2D = $RayCast2D
 onready var _tween: Tween = $Tween
@@ -12,7 +11,6 @@ onready var textbox = $"../GUI/UI/Textbox"
 
 var left = true
 var current_target = null
-var cell := Vector2.ZERO
 var tile_size = 32
 var inputs = {
 	"ui_right": Vector2.RIGHT, "ui_left": Vector2.LEFT,
@@ -22,12 +20,14 @@ var player_has = []
 
 func _ready() -> void:
 	_timer.wait_time = ui_cooldown
+	_timer.start()
 	position = position.snapped(Vector2.ONE * tile_size)
-	cell = grid.get_cell_coordinates(position)
 	if interface and interface.connect("item_activated", self, "_on_item_activated") != OK:
 		push_error("UI selection connect fail")
 
 func _unhandled_input(event) -> void:
+	if _tween.is_active():
+		return
 	var should_move = event.is_pressed()
 	if event.is_echo():
 		should_move = should_move and _timer.is_stopped()
@@ -38,6 +38,7 @@ func _unhandled_input(event) -> void:
 			move(dir)
 	if event.is_action_pressed("ui_select") or event.is_action_pressed("ui_accept"):
 		interact()
+	_timer.start()
 
 func move(dir) -> void:
 	match inputs[dir]:
@@ -51,12 +52,10 @@ func move(dir) -> void:
 			$Sprite.frame = 12
 	_ray.cast_to = inputs[dir] * tile_size
 	_ray.force_raycast_update()
-	if !_ray.is_colliding():
-		move_tween(dir)
-	else:
+	if _ray.is_colliding():
 		interact()
-	cell = grid.get_cell_coordinates(position)
-	_timer.start()
+	else:
+		move_tween(dir)
 
 func move_tween(dir) -> void:
 	if not _tween.interpolate_property(self, "position",
@@ -94,6 +93,7 @@ func move_tween(dir) -> void:
 			else:
 				$AnimationPlayer.play("walk_right_2")
 				left = true
+
 
 func interact() -> void:
 	_ray.force_raycast_update()

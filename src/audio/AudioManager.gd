@@ -15,8 +15,8 @@ func play_music(index: int, start:float = 0) -> void:
 
 var musics = [
 	"res://assets/audio/its-glowtime.ogg",
-	"res://assets/audio/atmoseerie04.mp3.ogg",
-	"res://assets/audio/atmoseerie02.mp3.ogg"
+	"res://assets/audio/atmoseerie04.ogg",
+	"res://assets/audio/atmoseerie02.ogg"
 ]
 
 # SOUND
