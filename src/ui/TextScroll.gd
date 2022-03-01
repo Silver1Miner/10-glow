@@ -32,8 +32,8 @@ func _ready() -> void:
 		next_level = PlayerData.floors[1]
 		#PlayerData.new_game = false
 	else:
-		if not AudioManager.playing or AudioManager.current != 0:
-			AudioManager.play_music(0, 0)
+		if not AudioManager.playing or AudioManager.current != 3:
+			AudioManager.play_music(3, 0)
 		base_speed = 30
 		text = data.credits.duplicate(true)
 		#$image.texture = PlayerData.ending_background

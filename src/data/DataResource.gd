@@ -198,6 +198,7 @@ var credits = [
 	],[
 		"SOUNDTRACK",
 		"\"It's Glowtime!\" by Vav",
+		"\"Goodbye Worm\" by Yanagi",
 	],[
 		"Additional CC0 Assets from",
 		"opengameart.org",
@@ -213,5 +214,18 @@ var credits = [
 		"This is a work of fiction.",
 		"Any resemblance to actual events or persons,",
 		"living or dead, is entirely coincidental."
-	],
+	],[
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		"",
+		""
+	]
 ]
